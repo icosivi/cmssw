@@ -1,116 +1,63 @@
-#include "DetectorDescription/Core/interface/DDAlgorithm.h"
-#include "DetectorDescription/Core/interface/DDAlgorithmFactory.h"
-#include "DetectorDescription/Core/interface/DDCompactView.h"
-#include "DetectorDescription/Core/interface/DDCurrentNamespace.h"
-#include "DetectorDescription/Core/interface/DDLogicalPart.h"
-#include "DetectorDescription/Core/interface/DDName.h"
-#include "DetectorDescription/Core/interface/DDRotationMatrix.h"
-#include "DetectorDescription/Core/interface/DDSplit.h"
-#include "DetectorDescription/Core/interface/DDTransform.h"
-#include "DetectorDescription/Core/interface/DDTranslation.h"
-#include "DetectorDescription/Core/interface/DDTypes.h"
-#include "DataFormats/Math/interface/GeantUnits.h"
+#include "DD4hep/DetFactoryHelper.h"
+#include "DataFormats/Math/interface/CMSUnits.h"
+#include "DetectorDescription/DDCMS/interface/DDPlugins.h"
 #include "FWCore/MessageLogger/interface/MessageLogger.h"
-#include "FWCore/PluginManager/interface/PluginFactory.h"
+#include <Math/Cartesian3D.h>
+#include <Math/DisplacementVector3D.h>
 
-#include <cmath>
-#include <memory>
+using namespace std;
+using namespace dd4hep;
+using namespace cms;
+using namespace cms_units::operators;
 
-using namespace geant_units::operators;
-using namespace angle_units::operators;
+using DD3Vector = ROOT::Math::DisplacementVector3D<ROOT::Math::Cartesian3D<double> >;
 
-class DDMTDLinear : public DDAlgorithm {
-public:
-  DDMTDLinear()
-      : m_n(1), m_startCopyNo(1), m_incrCopyNo(1), m_theta(0.), m_phi(0.), m_delta(0.), m_phi_obj(0.), m_theta_obj(0.) {}
+static long algorithm(Detector& /* description */, cms::DDParsingContext& ctxt, xml_h e, SensitiveDetector& /* sens */) {
+  cms::DDNamespace ns(ctxt, e, true);
+  DDAlgoArguments args(ctxt, e);
 
-  void initialize(const DDNumericArguments& nArgs,
-                  const DDVectorArguments& vArgs,
-                  const DDMapArguments& mArgs,
-                  const DDStringArguments& sArgs,
-                  const DDStringVectorArguments& vsArgs) override;
+  int n = args.value<int>("N");
+  int startCopyNo = args.find("StartCopyNo") ? args.value<int>("StartCopyNo") : 1;
+  int incrCopyNo = args.find("IncrCopyNo") ? args.value<int>("IncrCopyNo") : 1;
+  double theta = args.find("Theta") ? args.value<double>("Theta") : 0.;
+  double phi = args.find("Phi") ? args.value<double>("Phi") : 0.;
+  double delta = args.find("Delta") ? args.value<double>("Delta") : 0.;
+  vector<double> base = args.value<vector<double> >("Base");
+  Volume mother = ns.volume(args.parentName());
+  Volume child = ns.volume(args.value<string>("ChildName"));
+  int copy = startCopyNo;
 
-  void execute(DDCompactView& cpv) override;
+  LogDebug("DDAlgorithm") << "DDLinear: Parameters for positioning:: n " << n << "  Direction Theta, Phi, Delta "
+                          << convertRadToDeg(theta) << " " << convertRadToDeg(phi) << " " << convertRadToDeg(delta)
+                          << " Base " << base[0] << ", " << base[1] << ", " << base[2];
 
-private:
-  int m_n;                     //Number of copies
-  int m_startCopyNo;           //Start Copy number
-  int m_incrCopyNo;            //Increment in Copy number
-  double m_theta;              //Theta
-  double m_phi;                //Phi dir[Theta,Phi] ... unit-std::vector in direction Theta, Phi
-  double m_delta;              //Delta - distance between two subsequent positions along dir[Theta,Phi]
-  double m_phi_obj;            //Phi angle to rotate volumes (indipendent from m_phi traslation direction)
-  double m_theta_obj;          //Theta angle to rotate volumes
-  std::vector<double> m_base;  //Base values - a 3d-point where the offset is calculated from
-                               //base is optional, if omitted base=(0,0,0)
-  std::pair<std::string, std::string> m_childNmNs;  //Child name
-                                                    //Namespace of the child
-};
+  LogDebug("DDAlgorithm") << "DDLinear: Parent " << mother.name() << "\tChild " << child.name() << " NameSpace "
+                          << ns.name();
 
-void DDMTDLinear::initialize(const DDNumericArguments& nArgs,
-                             const DDVectorArguments& vArgs,
-                             const DDMapArguments&,
-                             const DDStringArguments& sArgs,
-                             const DDStringVectorArguments&) {
-  m_n = int(nArgs["N"]);
-  m_startCopyNo = int(nArgs["StartCopyNo"]);
-  m_incrCopyNo = int(nArgs["IncrCopyNo"]);
-  m_theta = nArgs["Theta"];
-  m_phi = nArgs["Phi"];
-  m_delta = nArgs["Delta"];
-  m_base = vArgs["Base"];
-  m_phi_obj = nArgs["Phi_obj"];
-  m_theta_obj = nArgs["Theta_obj"];
+  Position direction(sin(theta) * cos(phi), sin(theta) * sin(phi), cos(theta));
 
-  LogDebug("DDAlgorithm") << "DDMTDLinear: Parameters for position"
-                          << "ing:: n " << m_n << " Direction Theta, Phi, Offset, Delta " << convertRadToDeg(m_theta)
-                          << " " << convertRadToDeg(m_phi) << " "
-                          << " " << convertRadToDeg(m_delta) << " Base " << m_base[0] << ", " << m_base[1] << ", "
-                          << m_base[2] << "Objects placement Phi_obj, Theta_obj " << convertRadToDeg(m_phi_obj) << " "
-                          << convertRadToDeg(m_theta_obj);
+  Position basetr(base[0], base[1], base[2]);
 
-  m_childNmNs = DDSplit(sArgs["ChildName"]);
-  if (m_childNmNs.second.empty())
-    m_childNmNs.second = DDCurrentNamespace::ns();
+  double thetaZ=0; //rotation is in xy plane
+  double phiZ=0; 
+  double thetaX=0;
+  double thetaY=0;
+  double phiX=phi;
+  double phiY=phi+TMath::Pi()/2  // Rad o Deg?????????????????????
 
-  DDName parentName = parent().name();
-  LogDebug("DDAlgorithm") << "DDMTDLinear: Parent " << parentName << "\tChild " << m_childNmNs.first << " NameSpace "
-                          << m_childNmNs.second;
-}
+  Rotation3D rotation = Rotation3D(double thetaX, double phiX, double thetaY, double phiY, double thetaZ, double phiZ);  // Rotation3D()  = Identity rotation
 
-void DDMTDLinear::execute(DDCompactView& cpv) {
-  DDName mother = parent().name();
-  DDName ddname(m_childNmNs.first, m_childNmNs.second);
-  int copy = m_startCopyNo;
+  for (int i = 0; i < n; ++i) {
+    Position tran = basetr + (i * delta) * direction;     //Position tran = basetr + (double(copy) * delta) * direction;
+    mother.placeVolume(child, copy, Transform3D(rotation, tran));
+    LogDebug("DDAlgorithm") << "DDLinear: " << child.name() << " number " << copy << " positioned in " << mother.name()
+                            << " at " << tran << " with " << rotation;
 
-  DDTranslation direction(sin(m_theta) * cos(m_phi), sin(m_theta) * sin(m_phi), cos(m_theta));
-
-  DDTranslation basetr(m_base[0], m_base[1], m_base[2]);
-
-  //rotation is in xy plane
-  double thetaZ = m_theta_obj - 0.5_pi;
-  double phiZ = m_phi_obj;
-  double thetaX = m_theta_obj;
-  double thetaY = m_theta_obj;
-  double phiX = m_phi_obj;
-  double phiY = m_phi_obj + 0.5_pi;
-
-  DDRotation rotation = DDRotation("Rotation");
-
-  if (!rotation) {
-    LogDebug("DDAlgorithm") << "DDMTDLinear: Creating a new "
-                            << "rotation for " << ddname;
-
-    rotation = DDrot("Rotation", DDcreateRotationMatrix(thetaX, phiX, thetaY, phiY, thetaZ, phiZ));
+    copy += incrCopyNo;
   }
 
-  for (int i = 0; i < m_n; ++i) {
-    DDTranslation tran = basetr + (double(i) * m_delta) * direction;
-    cpv.position(ddname, mother, copy, tran, rotation);
-    LogDebug("DDAlgorithm") << "DDMTDLinear: " << m_childNmNs.second << ":" << m_childNmNs.first << " number " << copy
-                            << " positioned in " << mother << " at " << tran << " with " << rotation;
-    copy += m_incrCopyNo;
-  }
+  return 1;
 }
 
-DEFINE_EDM_PLUGIN(DDAlgorithmFactory, DDMTDLinear, "mtd:DDMTDLinear");
+// first argument is the type from the xml file
+DECLARE_DDCMS_DETELEMENT(DDCMS_global_DDLinear, algorithm)
