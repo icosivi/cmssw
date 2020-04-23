@@ -2,17 +2,20 @@
 <DDDefinition xmlns="http://www.cern.ch/cms/DDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cern.ch/cms/DDL ../../../../DetectorDescription/Schema/DDLSchema.xsd">
 
   <ConstantsSection label="etl.xml" eval="true/false">
+  	<Constant name="ETLcenter" value="3024.5*mm"/> 
+  	<Constant name="Disc1center" value="2999.62*mm"/>
+  	<Constant name="Disc2center" value="3029.62*mm"/>
 	<Constant name="ETLrmin" value="[caloBase:Rmin100]"/>   <!-- 26.3 cm -->
-	<Constant name="ETLrmax" value="[caloBase:Rmax100]"/>   <!-- 125.525 cm -->
-	<Constant name="ETLzmin" value="-0.5*([caloBase:Zpos110]-[caloBase:Zpos10])"/>
-	<Constant name="ETLzmax" value="0.5*([caloBase:Zpos110]-[caloBase:Zpos10])-2*cm"/>
+	<Constant name="ETLrmax" value="[caloBase:Rmax100]"/>   <!-- 125.525 cm --> 
+	<Constant name="ETLzmin" value="-3.85*cm"/>  
+	<Constant name="ETLzmax" value="3.85*cm"/> 
 
 	<Constant name="Disc_thickness" value="1.894"/>  <!-- thickness of one Disc comprising modules, service hybrids on both faces, mounted on the Al and MIC6-Al rings. Fig 3.73 TDR and line 354 Ulascan ETLDetectorDimensions.cc -->
 	<Constant name="DiscSector_thickness" value="0.585"/> <!-- this is the service hybrid height according to TDR table 3.9 -->
 	<!-- LGAD and ETROC values taken from Ulascan code (line 103 on in ETLDetectorDimensions.cc), same values in the TDR -->
 	<Constant name="LGADdx" value="2.12"/>
 	<Constant name="LGADdy" value="4.2"/>
-	<Constant name="EModule_Timingactive" value="0.005"/>
+	<Constant name="EModule_Timingactive" value="0.005"/> <!-- LGAD_Timingactive? -->
 	<Constant name="LGAD_Substrate" value="0.025"/>
 	<Constant name="LGADdz" value="0.03"/>
 	<Constant name="lgadSep_X" value="0.025"/>  <!-- x-offset between lgad in a 2SensorModule, line 232 ETLDetectorDimensions.cc -->
@@ -182,32 +185,26 @@
   </LogicalPartSection>
 
 
-  <PosPartSection label="etl.xml">
-	<PosPart copyNumber="1">
-	  <rParent name="caloBase:CALOECFront"/>
-	  <rChild name="etl:EndcapTimingLayer"/>
-	  <Translation x="0." y="0." z="0.5*([caloBase:Zpos110]+[caloBase:Zpos10])+2*cm" />  <!-- 303.45*cm wrt IP-->
+  
+  <PosPartSection label="etl.xml">                                     
+	<PosPart copyNumber="1">                                           
+	  <rParent name="caloBase:CALOECFront"/>                         
+	  <rChild name="etl:EndcapTimingLayer"/>  
+	  <Translation x="0." y="0." z="[ETLcenter]" />  
 	</PosPart>
-
-	<!-- ETL z-Positions wrt IP: endcap: 298.6*cm (2966) -> 306.3*cm  / Volume center 303.45*cm -->
-	<PosPart copyNumber="1">
-	  <rParent name="etl:EndcapTimingLayer"/>
-	  <rChild name="etl:ThermalScreen"/>
-	  <Translation x="0." y="0." z="-3.85*cm" />
-	</PosPart>
-	<PosPart copyNumber="1">
-	  <rParent name="etl:EndcapTimingLayer"/>
-	  <rChild name="etl:Disc1"/>
-	  <Translation x="0." y="0." z="-1.788*cm" />
-	</PosPart>
-	<PosPart copyNumber="1">
-	  <rParent name="etl:EndcapTimingLayer"/>
-	  <rChild name="etl:Disc2"/>
-	  <Translation x="0." y="0." z="1.212*cm" />
-	</PosPart>
-	<PosPart copyNumber="1">
-	  <rParent name="etl:Disc1"/>
-	  <rChild name="etl:Aluminium_Disc"/>
+	<PosPart copyNumber="1">                                           
+	  <rParent name="etl:EndcapTimingLayer"/>                         
+	  <rChild name="etl:Disc1"/>  
+	  <Translation x="0." y="0." z="[Disc1center]-[ETLcenter]" /> 
+	</PosPart> 
+	<PosPart copyNumber="1">                                           
+	  <rParent name="etl:EndcapTimingLayer"/>                         
+	  <rChild name="etl:Disc2"/>  
+	  <Translation x="0." y="0." z="[Disc2center]-[ETLcenter]" /> 
+	</PosPart> 
+	<PosPart copyNumber="1">                                           
+	  <rParent name="etl:Disc1"/>                         
+	  <rChild name="etl:Aluminium_Disc"/>  
 	  <Translation x="0." y="0." z="0.3175*cm" />
 	</PosPart>
 	<PosPart copyNumber="1">
@@ -216,15 +213,15 @@
 	  <Translation x="0." y="0." z="-0.0445*cm" />
 	</PosPart>
 	<!-- Sectors in both Disc1 and Disc2 (Front/Back faces) are placed anti-clockwise (Quarter 1 is on top right, Quarter 2 top left...) -->
-	<PosPart copyNumber="1">
-	  <rParent name="etl:Disc1"/>
-	  <rChild name="etl:DiscSector_Front"/>
-	  <rRotation name="etl:0"/>
-	  <Translation x="0*cm" y="0*cm" z="-0.6545*cm" />  <!-- 1.2375 = 1.2 + 0.075/2 -->
-	</PosPart>
-	<PosPart copyNumber="2">
-	  <rParent name="etl:Disc1"/>
-	  <rChild name="etl:DiscSector_Front"/>
+	<PosPart copyNumber="1">                                           
+	  <rParent name="etl:Disc1"/>                         
+	  <rChild name="etl:DiscSector_Front"/> 
+	  <rRotation name="etl:0"/> 
+	  <Translation x="0*cm" y="0*cm" z="-0.6545*cm" />  
+	</PosPart> 
+	<PosPart copyNumber="2">                                           
+	  <rParent name="etl:Disc1"/>                         
+	  <rChild name="etl:DiscSector_Front"/>  
 	  <rRotation name="etl:270"/>
 	  <Translation x="0*cm" y="0*cm" z="-0.6545*cm" />
 	</PosPart>
@@ -264,13 +261,13 @@
 	  <rRotation name="etl:90"/>
 	  <Translation x="0*cm" y="0*cm" z="0.6545*cm" />
 	</PosPart>
-    <PosPart copyNumber="1">
-      <rParent name="etl:Disc2"/>
-      <rChild name="etl:Aluminium_Disc"/>
-      <Translation x="0." y="0." z="0.3175*cm" />
-    </PosPart>
-    <PosPart copyNumber="1">
-      <rParent name="etl:Disc2"/>
+        <PosPart copyNumber="1">
+          <rParent name="etl:Disc2"/>
+          <rChild name="etl:Aluminium_Disc"/>
+      	  <Translation x="0." y="0." z="0.3175*cm" />
+        </PosPart>
+        <PosPart copyNumber="1">
+          <rParent name="etl:Disc2"/>
       <rChild name="etl:MIC6_Aluminium_Disc"/>
       <Translation x="0." y="0." z="-0.0445*cm" />
     </PosPart>
