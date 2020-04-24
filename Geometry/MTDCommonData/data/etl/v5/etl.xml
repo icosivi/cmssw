@@ -3,85 +3,84 @@
 
   <!-- Unit of measurement mm to adapt to Natalia's units -->
   <ConstantsSection label="etl.xml" eval="true/false">
-  	<Constant name="ETLcenter" value="3024.68497*mm"/>
-  	<Constant name="Disc1center" value="2999.62*mm"/>
-  	<Constant name="Disc2center" value="3029.62*mm"/>
-	  <Constant name="ETLrmin" value="[caloBase:Rmin100]"/>
-	  <Constant name="ETLrmax" value="[caloBase:Rmax100]"/> 
-	  <Constant name="ETLrmax2" value="[caloBase:Rmax110]"/>  
-	  <Constant name="ETLzmin" value="-39.3*mm"/> 
-	  <Constant name="ETLzmax" value="39.3*mm"/> 
-	  <Constant name="Disc_thickness" value="27.9"/>
-	  <Constant name="Al_Disc_thickness" value="7.24"/>
-	  <Constant name="Disc_Rmin" value="310"/>
-	  <Constant name="Disc_Rmax" value="1190"/>   
+    <Constant name="ETLcenter" value="3024.68497*mm"/>
+    <Constant name="Disc1center" value="2999.62*mm"/>
+    <Constant name="Disc2center" value="3029.62*mm"/>
+    <Constant name="ETLrmin" value="[caloBase:Rmin100]"/>
+    <Constant name="ETLrmax" value="[caloBase:Rmax100]"/> 
+    <Constant name="ETLrmax2" value="[caloBase:Rmax110]"/>  
+    <Constant name="ETLzmin" value="-39.3*mm"/> 
+    <Constant name="ETLzmax" value="39.3*mm"/> 
+    <Constant name="Disc_thickness" value="27.9"/>
+    <Constant name="Al_Disc_thickness" value="7.24"/>
+    <Constant name="Disc_Rmin" value="310"/>
+    <Constant name="Disc_Rmax" value="1190"/>   
     <Constant name="DeltaY" value="0.5"/>
-	  <Constant name="ServiceHybrid_X" value="34"/>  
-	  <Constant name="ServiceHybrid_Y3" value="3*[SensorModule_Y]"/>
-	  <Constant name="ServiceHybrid_Y6" value="6*[SensorModule_Y]"/> 
-	  <Constant name="ServiceHybrid_Y7" value="7*[SensorModule_Y]"/>   
-	  <Constant name="ServiceHybrid_Z" value="10.33"/>
-	  <Constant name="SensorModule_X" value="25.85"/>  <!-- 28.25mm - 2.4mm overlapping with SH -->
-	  <Constant name="SensorModule_Y" value="43.1"/>
-	  <Constant name="SensorModule_Z" value="2.29"/>
-	  <Constant name="DeltaX_ServiceModule" value="29.925"/>  <!-- ServiceHybrid_X/2 + SensorModule_X/2 -->
-	  <Constant name="DeltaY_Service3_Service6" value="194.45"/>  <!-- DeltaY + ServiceHybrid_Y3/2 + ServiceHybrid_Y6/2 -->
-	  <Constant name="DeltaY_Service3_Service7" value="216"/>  <!-- DeltaY + ServiceHybrid_Y3/2 + ServiceHybrid_Y7/2 -->
-	  <Constant name="DeltaY_Service6_Service7" value="280.65"/>  <!-- DeltaY + ServiceHybrid_Y6/2 + ServiceHybrid_Y7/2 -->
-	  <Constant name="LGADdx" value="21.2"/> 
-	  <Constant name="LGADdy" value="42"/>
-	  <Constant name="LGAD_TimingActive" value="0.05"/> 
-	  <Constant name="LGAD_Substrate" value="0.25"/>
-	  <Constant name="LGADdz" value="0.3"/>
-	  <Constant name="lgadSep_X" value="0.25"/> 
-	  <Constant name="lgadSep_Y" value="0.5"/>  
-	  <Constant name="ETROCdx" value="22.3"/>
-	  <Constant name="ETROCdy" value="20.8"/>
-	  <Constant name="ETROCdz" value="0.25"/>
-	  <Constant name="etrocSep_X" value="0.3"/>  
-	  <Constant name="etrocSep_Y" value="0.1"/>
-	  <Constant name="x_start_front" value="1190-33.05-[SensorModule_X]/2"/>
-	  <Constant name="x_start_back" value="-1190+16.05+[ServiceHybrid_X]/2"/>
-	  <Constant name="y_offset" value="1+[SensorModule_Y]/2"/>
+    <Constant name="ServiceHybrid_X" value="34"/>  
+    <Constant name="ServiceHybrid_Y3" value="3*[SensorModule_Y]"/>
+    <Constant name="ServiceHybrid_Y6" value="6*[SensorModule_Y]"/> 
+    <Constant name="ServiceHybrid_Y7" value="7*[SensorModule_Y]"/>   
+    <Constant name="ServiceHybrid_Z" value="10.33"/>
+    <Constant name="SensorModule_X" value="25.85"/>  <!-- 28.25mm - 2.4mm overlapping with SH -->
+    <Constant name="SensorModule_Y" value="43.1"/>
+    <Constant name="SensorModule_Z" value="2.29"/>
+    <Constant name="DeltaX_ServiceModule" value="29.925"/>  <!-- ServiceHybrid_X/2 + SensorModule_X/2 -->
+    <Constant name="DeltaY_Service3_Service6" value="194.45"/>  <!-- DeltaY + ServiceHybrid_Y3/2 + ServiceHybrid_Y6/2 -->
+    <Constant name="DeltaY_Service3_Service7" value="216"/>  <!-- DeltaY + ServiceHybrid_Y3/2 + ServiceHybrid_Y7/2 -->
+    <Constant name="DeltaY_Service6_Service7" value="280.65"/>  <!-- DeltaY + ServiceHybrid_Y6/2 + ServiceHybrid_Y7/2 -->
+    <Constant name="LGADdx" value="21.2"/> 
+    <Constant name="LGADdy" value="42"/>
+    <Constant name="EModule_Timingactive" value="0.05"/> 
+    <Constant name="LGAD_Substrate" value="0.25"/>
+    <Constant name="LGADdz" value="0.3"/>
+    <Constant name="lgadSep_X" value="0.25"/> 
+    <Constant name="lgadSep_Y" value="0.5"/>  
+    <Constant name="ETROCdx" value="22.3"/>
+    <Constant name="ETROCdy" value="20.8"/>
+    <Constant name="ETROCdz" value="0.25"/>
+    <Constant name="etrocSep_X" value="0.3"/>  
+    <Constant name="etrocSep_Y" value="0.1"/>
+    <Constant name="x_start_front" value="1190-33.05-[SensorModule_X]/2"/>
+    <Constant name="x_start_back" value="-1190+16.05+[ServiceHybrid_X]/2"/>
+    <Constant name="y_offset" value="1+[SensorModule_Y]/2"/>
   </ConstantsSection>
 
 
   <SolidSection label="etl.xml">
-	  <Polycone name="EndcapTimingLayer" startPhi="0*deg" deltaPhi="360*deg">
-	    <ZSection z="[ETLzmin]"         rMin="[ETLrmin]"          rMax="[ETLrmax]" />
-	    <ZSection z="[ETLzmax]"         rMin="[ETLrmin]"          rMax="[ETLrmax2]" />
-	  </Polycone>
-
-	  <Tubs name="ThermalScreen" rMin="[caloBase:Rmin100]" rMax="1243.7*mm" dz="0.5*(20)*mm" startPhi="0*deg" deltaPhi="360*deg"/> 
-	  <Tubs name="Disc" rMin="[Disc_Rmin]*mm" rMax="[Disc_Rmax]*mm" dz="0.5*[Disc_thickness]*mm" startPhi="0*deg" deltaPhi="360*deg"/>
-	  <Tubs name="Al_Disc" rMin="[Disc_Rmin]*mm" rMax="[Disc_Rmax]*mm" dz="0.5*[Al_Disc_thickness]*mm" startPhi="0*deg" deltaPhi="360*deg"/>
-
-	  <!-- FRONT: face closest to IP, BACK: furthest from IP -->
-	  <Tubs name="DiscSector_Front" rMin="[Disc_Rmin]*mm" rMax="[Disc_Rmax]*mm" dz="0.5*[ServiceHybrid_Z]*mm" startPhi="0*deg" deltaPhi="180*deg"/> <!-- half-disc on front face -->
-	  <Tubs name="DiscSector_Back" rMin="[Disc_Rmin]*mm" rMax="[Disc_Rmax]*mm" dz="0.5*[ServiceHybrid_Z]*mm" startPhi="0*deg" deltaPhi="180*deg"/> <!-- half-disc on back face -->
-	
-	  <Box name="SensorModule" dx="0.5*[SensorModule_X]*mm" dy="0.5*[SensorModule_Y]*mm" dz="0.5*[SensorModule_Z]*mm"/>
-	  <Box name="ServiceHybrid3" dx="0.5*[ServiceHybrid_X]*mm" dy="0.5*[ServiceHybrid_Y3]*mm" dz="0.5*[ServiceHybrid_Z]*mm"/>
-	  <Box name="ServiceHybrid6" dx="0.5*[ServiceHybrid_X]*mm" dy="0.5*[ServiceHybrid_Y6]*mm" dz="0.5*[ServiceHybrid_Z]*mm"/>
-	  <Box name="ServiceHybrid7" dx="0.5*[ServiceHybrid_X]*mm" dy="0.5*[ServiceHybrid_Y7]*mm" dz="0.5*[ServiceHybrid_Z]*mm"/>
-
-	  <Box name="ThermalPad" dx="0.5*[SensorModule_X]*mm" dy="0.5*[SensorModule_Y]*mm" dz="0.5*(0.25)*mm"/>
-	  <Box name="AlN_Carrier" dx="0.5*[SensorModule_X]*mm" dy="0.5*[SensorModule_Y]*mm" dz="0.5*(0.79)*mm"/>
-	  <Box name="LairdFilm" dx="0.5*([ETROCdx]+0.5*[etrocSep_X])*mm" dy="0.5*([ETROCdy]*2+[etrocSep_Y])*mm" dz="0.5*(0.08)*mm"/> 
-	  <Box name="ETROC" dx="0.5*[ETROCdx]*mm" dy="0.5*[ETROCdy]*mm" dz="0.5*(0.28)*mm"/>  <!-- solder bumps not considered, their thickness is included in that of the ETROC --> 
-	  <Box name="LGAD" dx="0.5*[LGADdx]*mm" dy="0.5*[LGADdy]*mm" dz="0.5*[LGADdz]*mm"/>
-	  <Box name="LGAD_TimingActive" dx="0.5*[LGADdx]*mm" dy="0.5*[LGADdy]*mm" dz="0.5*[LGAD_TimingActive]*mm"/>
-	  <Box name="LGAD_Substrate" dx="0.5*[LGADdx]*mm" dy="0.5*[LGADdy]*mm" dz="0.5*[LGAD_Substrate]*mm"/>
-	  <Box name="AlN_Cover" dx="0.5*[LGADdx]*mm" dy="0.5*[LGADdy]*mm" dz="0.5*(0.59)*mm"/>  <!-- epoxy included in the thickness of the AlN cover -->
+    <Polycone name="EndcapTimingLayer" startPhi="0*deg" deltaPhi="360*deg">
+      <ZSection z="[ETLzmin]"         rMin="[ETLrmin]"          rMax="[ETLrmax]" />
+      <ZSection z="[ETLzmax]"         rMin="[ETLrmin]"          rMax="[ETLrmax2]" />
+    </Polycone>
+     
+    <Tubs name="Disc" rMin="[Disc_Rmin]*mm" rMax="[Disc_Rmax]*mm" dz="0.5*[Disc_thickness]*mm" startPhi="0*deg" deltaPhi="360*deg"/>
+    <Tubs name="Al_Disc" rMin="[Disc_Rmin]*mm" rMax="[Disc_Rmax]*mm" dz="0.5*[Al_Disc_thickness]*mm" startPhi="0*deg" deltaPhi="360*deg"/>
+    
+    <!-- FRONT: face closest to IP, BACK: furthest from IP -->
+    <Tubs name="DiscSector_Front" rMin="[Disc_Rmin]*mm" rMax="[Disc_Rmax]*mm" dz="0.5*[ServiceHybrid_Z]*mm" startPhi="0*deg" deltaPhi="180*deg"/> <!-- half-disc on front face -->
+    <Tubs name="DiscSector_Back" rMin="[Disc_Rmin]*mm" rMax="[Disc_Rmax]*mm" dz="0.5*[ServiceHybrid_Z]*mm" startPhi="0*deg" deltaPhi="180*deg"/> <!-- half-disc on back face -->
+    
+    <Box name="SensorModule" dx="0.5*[SensorModule_X]*mm" dy="0.5*[SensorModule_Y]*mm" dz="0.5*[SensorModule_Z]*mm"/>
+    <Box name="ServiceHybrid3" dx="0.5*[ServiceHybrid_X]*mm" dy="0.5*[ServiceHybrid_Y3]*mm" dz="0.5*[ServiceHybrid_Z]*mm"/>
+    <Box name="ServiceHybrid6" dx="0.5*[ServiceHybrid_X]*mm" dy="0.5*[ServiceHybrid_Y6]*mm" dz="0.5*[ServiceHybrid_Z]*mm"/>
+    <Box name="ServiceHybrid7" dx="0.5*[ServiceHybrid_X]*mm" dy="0.5*[ServiceHybrid_Y7]*mm" dz="0.5*[ServiceHybrid_Z]*mm"/>
+    
+    <Box name="ThermalPad" dx="0.5*[SensorModule_X]*mm" dy="0.5*[SensorModule_Y]*mm" dz="0.5*(0.25)*mm"/>
+    <Box name="AlN_Carrier" dx="0.5*[SensorModule_X]*mm" dy="0.5*[SensorModule_Y]*mm" dz="0.5*(0.79)*mm"/>
+    <Box name="LairdFilm" dx="0.5*([ETROCdx]+0.5*[etrocSep_X])*mm" dy="0.5*([ETROCdy]*2+[etrocSep_Y])*mm" dz="0.5*(0.08)*mm"/> 
+    <Box name="ETROC" dx="0.5*[ETROCdx]*mm" dy="0.5*[ETROCdy]*mm" dz="0.5*(0.28)*mm"/>  <!-- solder bumps not considered, their thickness is included in that of the ETROC --> 
+    <Box name="LGAD" dx="0.5*[LGADdx]*mm" dy="0.5*[LGADdy]*mm" dz="0.5*[LGADdz]*mm"/>
+    <Box name="EModule_Timingactive" dx="0.5*[LGADdx]*mm" dy="0.5*[LGADdy]*mm" dz="0.5*[EModule_Timingactive]*mm"/>
+    <Box name="LGAD_Substrate" dx="0.5*[LGADdx]*mm" dy="0.5*[LGADdy]*mm" dz="0.5*[LGAD_Substrate]*mm"/>
+    <Box name="AlN_Cover" dx="0.5*[LGADdx]*mm" dy="0.5*[LGADdy]*mm" dz="0.5*(0.59)*mm"/>  <!-- epoxy included in the thickness of the AlN cover -->
   </SolidSection>
 
 
   <RotationSection label="etl.xml">
     <Rotation name="0" thetaX="90*deg" phiX="0*deg" thetaY="90*deg" phiY="90*deg" thetaZ="0*deg" phiZ="0*deg"/>
-	  <Rotation name="270" thetaX="90*deg" phiX="270*deg" thetaY="90*deg" phiY="0*deg" thetaZ="0*deg" phiZ="0*deg"/>
-	  <Rotation name="180" thetaX="90*deg" phiX="180*deg" thetaY="90*deg" phiY="270*deg" thetaZ="0*deg" phiZ="0*deg"/>
-	  <Rotation name="90" thetaX="90*deg" phiX="90*deg" thetaY="90*deg" phiY="180*deg" thetaZ="0*deg" phiZ="0*deg"/>
-	  <Rotation name="Reverse" thetaX="90*deg" phiX="0*deg" thetaY="90*deg" phiY="270*deg" thetaZ="180*deg" phiZ="0*deg"/>
+    <Rotation name="270" thetaX="90*deg" phiX="270*deg" thetaY="90*deg" phiY="0*deg" thetaZ="0*deg" phiZ="0*deg"/>
+    <Rotation name="180" thetaX="90*deg" phiX="180*deg" thetaY="90*deg" phiY="270*deg" thetaZ="0*deg" phiZ="0*deg"/>
+    <Rotation name="90" thetaX="90*deg" phiX="90*deg" thetaY="90*deg" phiY="180*deg" thetaZ="0*deg" phiZ="0*deg"/>
+    <Rotation name="Reverse" thetaX="90*deg" phiX="0*deg" thetaY="90*deg" phiY="270*deg" thetaZ="180*deg" phiZ="0*deg"/>
   </RotationSection>
 
   <Vector name="StartCopyNo_Front_Right" type="numeric" nEntries="27">
@@ -128,21 +127,17 @@
 
 
   <LogicalPartSection label="etl.xml">                                 
-	  <LogicalPart name="EndcapTimingLayer" category="unspecified">      
-	    <rSolid name="etl:EndcapTimingLayer"/>                               
-	    <rMaterial name="materials:Air"/>                                
-	  </LogicalPart>
-	  <LogicalPart name="ThermalScreen" category="unspecified">      
-	    <rSolid name="etl:ThermalScreen"/>                               
-	    <rMaterial name="mtdMaterial:ThermalScreenComposite"/>                                  
-	  </LogicalPart>
-	  <LogicalPart name="Disc" category="unspecified">      
-	    <rSolid name="etl:Disc"/>                               
-	    <rMaterial name="materials:Air"/>                                
-	  </LogicalPart>
-	  <LogicalPart name="Al_Disc" category="unspecified">
-        <rSolid name="etl:Al_Disc"/>
-        <rMaterial name="materials:Aluminium"/>
+    <LogicalPart name="EndcapTimingLayer" category="unspecified">      
+      <rSolid name="etl:EndcapTimingLayer"/>                               
+      <rMaterial name="materials:Air"/>                                
+    </LogicalPart>
+    <LogicalPart name="Disc" category="unspecified">      
+      <rSolid name="etl:Disc"/>                               
+      <rMaterial name="materials:Air"/>                                
+    </LogicalPart>
+    <LogicalPart name="Al_Disc" category="unspecified">
+      <rSolid name="etl:Al_Disc"/>
+      <rMaterial name="materials:Aluminium"/>
     </LogicalPart>
     
     <!-- Sectors on Disc1 -->
@@ -211,8 +206,8 @@
       <rSolid name="etl:LGAD"/>
       <rMaterial name="materials:Air"/>     
     </LogicalPart>
-    <LogicalPart name="LGAD_TimingActive" category="unspecified">  
-      <rSolid name="etl:LGAD_TimingActive"/>
+    <LogicalPart name="EModule_Timingactive" category="unspecified">  
+      <rSolid name="etl:EModule_Timingactive"/>
       <rMaterial name="materials:Silicon"/>     
     </LogicalPart>
     <LogicalPart name="LGAD_Substrate" category="unspecified">  
@@ -227,138 +222,138 @@
 
   
   <PosPartSection label="etl.xml">                                     
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="caloBase:CALOECFront"/>               
-	    <rChild name="etl:EndcapTimingLayer"/>  
-	  <Translation x="0." y="0." z="3024.68497*mm" /> 
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:EndcapTimingLayer"/>                         
-	    <rChild name="etl:Disc"/>  
-	    <Translation x="0." y="0." z="[Disc1center]-[ETLcenter]" /> 
-	  </PosPart> 
-	  <PosPart copyNumber="2">                                           
-	    <rParent name="etl:EndcapTimingLayer"/>                         
-	    <rChild name="etl:Disc"/>  
-	    <Translation x="0." y="0." z="[Disc2center]-[ETLcenter]" /> 
-	  </PosPart> 
-
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:Disc"/>                         
-	    <rChild name="etl:Al_Disc"/> 
-	    <Translation x="0*mm" y="0*mm" z="0*mm" />  
-	  </PosPart> 
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:Disc"/>                         
-	    <rChild name="etl:DiscSector_Front"/> 
-	    <rRotation name="etl:0"/> 
-	    <Translation x="0*mm" y="0*mm" z="-8.785*mm" />  
-	  </PosPart> 
-	  <PosPart copyNumber="2">                                           
-	    <rParent name="etl:Disc"/>                         
-	    <rChild name="etl:DiscSector_Front"/>  
-	    <rRotation name="etl:180"/>
-	    <Translation x="0*mm" y="0*mm" z="-8.785*mm" />
-	  </PosPart> 
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:Disc"/>                         
-	    <rChild name="etl:DiscSector_Back"/>  
-	    <rRotation name="etl:0"/>
-	    <Translation x="0*mm" y="0*mm" z="8.785*mm" />  
-	  </PosPart>
-	  <PosPart copyNumber="2">                                           
-	    <rParent name="etl:Disc"/>                         
-	    <rChild name="etl:DiscSector_Back"/>
-	    <rRotation name="etl:180"/>  
-	    <Translation x="0*mm" y="0*mm" z="8.785*mm" />
-	  </PosPart> 
-   
+    <PosPart copyNumber="1">                                           
+      <rParent name="caloBase:CALOECFront"/>               
+      <rChild name="etl:EndcapTimingLayer"/>  
+      <Translation x="0." y="0." z="3024.68497*mm" /> 
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:EndcapTimingLayer"/>                         
+      <rChild name="etl:Disc"/>  
+      <Translation x="0." y="0." z="[Disc1center]-[ETLcenter]" /> 
+    </PosPart> 
+    <PosPart copyNumber="2">                                           
+      <rParent name="etl:EndcapTimingLayer"/>                         
+      <rChild name="etl:Disc"/>  
+      <Translation x="0." y="0." z="[Disc2center]-[ETLcenter]" /> 
+    </PosPart> 
+    
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:Disc"/>                         
+      <rChild name="etl:Al_Disc"/> 
+      <Translation x="0*mm" y="0*mm" z="0*mm" />  
+    </PosPart> 
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:Disc"/>                         
+      <rChild name="etl:DiscSector_Front"/> 
+      <rRotation name="etl:0"/> 
+      <Translation x="0*mm" y="0*mm" z="-8.785*mm" />  
+    </PosPart> 
+    <PosPart copyNumber="2">                                           
+      <rParent name="etl:Disc"/>                         
+      <rChild name="etl:DiscSector_Front"/>  
+      <rRotation name="etl:180"/>
+      <Translation x="0*mm" y="0*mm" z="-8.785*mm" />
+    </PosPart> 
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:Disc"/>                         
+      <rChild name="etl:DiscSector_Back"/>  
+      <rRotation name="etl:0"/>
+      <Translation x="0*mm" y="0*mm" z="8.785*mm" />  
+    </PosPart>
+    <PosPart copyNumber="2">                                           
+      <rParent name="etl:Disc"/>                         
+      <rChild name="etl:DiscSector_Back"/>
+      <rRotation name="etl:180"/>  
+      <Translation x="0*mm" y="0*mm" z="8.785*mm" />
+    </PosPart> 
+    
     <!-- Elements composing SensorModule_Front_Right -->
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Right"/>                         
-	    <rChild name="etl:ThermalPad"/>  
-	    <Translation x="0." y="0." z="1.02*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Right"/>                         
-	    <rChild name="etl:AlN_Carrier"/>  
-	    <Translation x="0." y="0." z="0.5*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Right"/>                         
-	    <rChild name="etl:LairdFilm"/>  
-	    <Translation x="1.7" y="0." z="0.065*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Right"/>                         
-	    <rChild name="etl:ETROC"/>  
-	    <Translation x="1.625*mm" y="10.45*mm" z="-0.115*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="2">                                           
-	    <rParent name="etl:SensorModule_Front_Right"/>                         
-	    <rChild name="etl:ETROC"/>  
-	    <Translation x="1.625*mm" y="-10.45*mm" z="-0.115*mm" />
-	  </PosPart> 
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Right"/>                         
-	    <rChild name="etl:LGAD"/>  
-	    <Translation x="2.2*mm" y="0." z="-0.405*mm" />
-	  </PosPart>
-	  <!-- definition of LGAD active/substrate volumes -->
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:LGAD"/>                         
-	    <rChild name="etl:LGAD_TimingActive"/>  
-	    <Translation x="0.*mm" y="0.*mm" z="-0.125*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:LGAD"/>                         
-	    <rChild name="etl:LGAD_Substrate"/>  
-	    <Translation x="0.*mm" y="0.*mm" z="0.025*mm" />
-	  </PosPart> 
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Right"/>                         
-	    <rChild name="etl:AlN_Cover"/>  
-	    <Translation x="2.2*mm" y="0." z="-0.85*mm" /> 
-	  </PosPart> 
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Right"/>                         
+      <rChild name="etl:ThermalPad"/>  
+      <Translation x="0." y="0." z="1.02*mm" />
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Right"/>                         
+      <rChild name="etl:AlN_Carrier"/>  
+      <Translation x="0." y="0." z="0.5*mm" />
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Right"/>                         
+      <rChild name="etl:LairdFilm"/>  
+      <Translation x="1.7" y="0." z="0.065*mm" />
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Right"/>                         
+      <rChild name="etl:ETROC"/>  
+      <Translation x="1.625*mm" y="10.45*mm" z="-0.115*mm" />
+    </PosPart>
+    <PosPart copyNumber="2">                                           
+      <rParent name="etl:SensorModule_Front_Right"/>                         
+      <rChild name="etl:ETROC"/>  
+      <Translation x="1.625*mm" y="-10.45*mm" z="-0.115*mm" />
+    </PosPart> 
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Right"/>                         
+      <rChild name="etl:LGAD"/>  
+      <Translation x="2.2*mm" y="0." z="-0.405*mm" />
+    </PosPart>
+    <!-- definition of LGAD active/substrate volumes -->
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:LGAD"/>                         
+      <rChild name="etl:EModule_Timingactive"/>  
+      <Translation x="0.*mm" y="0.*mm" z="-0.125*mm" />
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:LGAD"/>                         
+      <rChild name="etl:LGAD_Substrate"/>  
+      <Translation x="0.*mm" y="0.*mm" z="0.025*mm" />
+    </PosPart> 
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Right"/>                         
+      <rChild name="etl:AlN_Cover"/>  
+      <Translation x="2.2*mm" y="0." z="-0.85*mm" /> 
+    </PosPart> 
+    
+    <!-- Elements composing SensorModule_Front_Left -->
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Left"/>                         
+      <rChild name="etl:ThermalPad"/>  
+      <Translation x="0." y="0." z="1.02*mm" />
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Left"/>                         
+      <rChild name="etl:AlN_Carrier"/>  
+      <Translation x="0." y="0." z="0.5*mm" />
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Left"/>                         
+      <rChild name="etl:LairdFilm"/>  
+      <Translation x="-0.17" y="0." z="0.065*mm" />
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Left"/>                         
+      <rChild name="etl:ETROC"/>  
+      <Translation x="-1.625*mm" y="10.45*mm" z="-0.115*mm" />
+    </PosPart>
+    <PosPart copyNumber="2">                                           
+      <rParent name="etl:SensorModule_Front_Left"/>                         
+      <rChild name="etl:ETROC"/>  
+      <Translation x="-1.625*mm" y="-10.45*mm" z="-0.115*mm" />
+    </PosPart> 
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Left"/>                         
+      <rChild name="etl:LGAD"/>  
+      <Translation x="-2.2*mm" y="0." z="-0.405*mm" />
+    </PosPart>
+    <PosPart copyNumber="1">                                           
+      <rParent name="etl:SensorModule_Front_Left"/>                         
+      <rChild name="etl:AlN_Cover"/>  
+      <Translation x="-2.2*mm" y="0." z="-0.85*mm" /> 
+    </PosPart>
 
-	   <!-- Elements composing SensorModule_Front_Left -->
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Left"/>                         
-	    <rChild name="etl:ThermalPad"/>  
-	    <Translation x="0." y="0." z="1.02*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Left"/>                         
-	    <rChild name="etl:AlN_Carrier"/>  
-	    <Translation x="0." y="0." z="0.5*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Left"/>                         
-	    <rChild name="etl:LairdFilm"/>  
-	    <Translation x="-0.17" y="0." z="0.065*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Left"/>                         
-	    <rChild name="etl:ETROC"/>  
-	    <Translation x="-1.625*mm" y="10.45*mm" z="-0.115*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="2">                                           
-	    <rParent name="etl:SensorModule_Front_Left"/>                         
-	    <rChild name="etl:ETROC"/>  
-	    <Translation x="-1.625*mm" y="-10.45*mm" z="-0.115*mm" />
-	  </PosPart> 
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Left"/>                         
-	    <rChild name="etl:LGAD"/>  
-	    <Translation x="-2.2*mm" y="0." z="-0.405*mm" />
-	  </PosPart>
-	  <PosPart copyNumber="1">                                           
-	    <rParent name="etl:SensorModule_Front_Left"/>                         
-	    <rChild name="etl:AlN_Cover"/>  
-	    <Translation x="-2.2*mm" y="0." z="-0.85*mm" /> 
-	  </PosPart>
-
-	  <!-- Elements composing SensorModule_Back_Left -->
+    <!-- Elements composing SensorModule_Back_Left -->
     <PosPart copyNumber="1">                                           
       <rParent name="etl:SensorModule_Back_Left"/>                         
       <rChild name="etl:ThermalPad"/>  
@@ -443,17 +438,17 @@
   <!-- Algorithm Section begins -->
     <!-- FRONT FACE  -->
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="6"/>
-	  <Numeric name="StartCopyNo" value="1"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="6"/>
+    <Numeric name="StartCopyNo" value="1"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	 <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -466,7 +461,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	 <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -479,20 +474,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="11"/>
-	  <Numeric name="StartCopyNo" value="7"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="11"/>
+    <Numeric name="StartCopyNo" value="7"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-2*[DeltaX_ServiceModule]-[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -505,7 +500,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -518,7 +513,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -531,20 +526,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="15"/>
-	  <Numeric name="StartCopyNo" value="18"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="15"/>
+    <Numeric name="StartCopyNo" value="18"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-4*[DeltaX_ServiceModule]-2*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -557,7 +552,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -570,7 +565,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -583,7 +578,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -596,20 +591,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="17"/>
-	  <Numeric name="StartCopyNo" value="33"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="17"/>
+    <Numeric name="StartCopyNo" value="33"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-6*[DeltaX_ServiceModule]-3*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -622,7 +617,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -635,20 +630,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="19"/>
-	  <Numeric name="StartCopyNo" value="50"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="19"/>
+    <Numeric name="StartCopyNo" value="50"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-8*[DeltaX_ServiceModule]-4*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -661,7 +656,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -674,7 +669,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -687,20 +682,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="21"/>
-	  <Numeric name="StartCopyNo" value="69"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="21"/>
+    <Numeric name="StartCopyNo" value="69"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-10*[DeltaX_ServiceModule]-5*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -713,7 +708,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -726,7 +721,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -739,7 +734,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -752,20 +747,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="22"/>
-	  <Numeric name="StartCopyNo" value="90"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="22"/>
+    <Numeric name="StartCopyNo" value="90"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-12*[DeltaX_ServiceModule]-6*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -778,7 +773,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -791,7 +786,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -804,7 +799,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -817,20 +812,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="24"/>
-	  <Numeric name="StartCopyNo" value="112"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="24"/>
+    <Numeric name="StartCopyNo" value="112"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-14*[DeltaX_ServiceModule]-7*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -843,7 +838,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -856,20 +851,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="25"/>
-	  <Numeric name="StartCopyNo" value="136"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="25"/>
+    <Numeric name="StartCopyNo" value="136"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-16*[DeltaX_ServiceModule]-8*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -882,7 +877,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -895,7 +890,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -908,20 +903,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="25"/>
-	  <Numeric name="StartCopyNo" value="161"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="25"/>
+    <Numeric name="StartCopyNo" value="161"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-18*[DeltaX_ServiceModule]-9*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -934,7 +929,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -947,7 +942,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -960,7 +955,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -973,20 +968,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="21"/>
-	  <Numeric name="StartCopyNo" value="186"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="21"/>
+    <Numeric name="StartCopyNo" value="186"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-20*[DeltaX_ServiceModule]-10*[SensorModule_X])*mm, ([y_offset]+5*[SensorModule_Y]+5*[DeltaY])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -999,7 +994,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1012,7 +1007,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1025,20 +1020,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="20"/>
-	  <Numeric name="StartCopyNo" value="207"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="20"/>
+    <Numeric name="StartCopyNo" value="207"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-22*[DeltaX_ServiceModule]-11*[SensorModule_X])*mm, ([y_offset]+6*[SensorModule_Y]+6*[DeltaY])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1051,7 +1046,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1064,7 +1059,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1077,20 +1072,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="20"/>
-	  <Numeric name="StartCopyNo" value="227"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="20"/>
+    <Numeric name="StartCopyNo" value="227"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-24*[DeltaX_ServiceModule]-12*[SensorModule_X])*mm, ([y_offset]+7*[SensorModule_Y]+7*[DeltaY])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1103,7 +1098,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1116,7 +1111,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1129,20 +1124,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="19"/>
-	  <Numeric name="StartCopyNo" value="247"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="19"/>
+    <Numeric name="StartCopyNo" value="247"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-26*[DeltaX_ServiceModule]-13*[SensorModule_X])*mm, ([y_offset]+8*[SensorModule_Y]+8*[DeltaY])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1155,7 +1150,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1168,7 +1163,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1181,7 +1176,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1194,20 +1189,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="19"/>
-	  <Numeric name="StartCopyNo" value="266"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="19"/>
+    <Numeric name="StartCopyNo" value="266"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-28*[DeltaX_ServiceModule]-14*[SensorModule_X])*mm, ([y_offset]+8*[SensorModule_Y]+8*[DeltaY])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1220,7 +1215,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1233,7 +1228,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1246,20 +1241,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="20"/>
-	  <Numeric name="StartCopyNo" value="285"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="20"/>
+    <Numeric name="StartCopyNo" value="285"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-30*[DeltaX_ServiceModule]-15*[SensorModule_X])*mm, ([y_offset]+7*[SensorModule_Y]+7*[DeltaY])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1272,7 +1267,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1285,7 +1280,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1298,20 +1293,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="20"/>
-	  <Numeric name="StartCopyNo" value="305"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="20"/>
+    <Numeric name="StartCopyNo" value="305"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-32*[DeltaX_ServiceModule]-16*[SensorModule_X])*mm, ([y_offset]+6*[SensorModule_Y]+6*[DeltaY])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1324,7 +1319,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1337,7 +1332,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1350,20 +1345,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="24"/>
-	  <Numeric name="StartCopyNo" value="325"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="24"/>
+    <Numeric name="StartCopyNo" value="325"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-34*[DeltaX_ServiceModule]-17*[SensorModule_X])*mm, ([y_offset]+2*[SensorModule_Y]+2*[DeltaY])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1376,7 +1371,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1389,7 +1384,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1402,7 +1397,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1415,20 +1410,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="25"/>
-	  <Numeric name="StartCopyNo" value="349"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="25"/>
+    <Numeric name="StartCopyNo" value="349"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-36*[DeltaX_ServiceModule]-18*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1441,7 +1436,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1454,7 +1449,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1467,20 +1462,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="24"/>
-	  <Numeric name="StartCopyNo" value="374"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="24"/>
+    <Numeric name="StartCopyNo" value="374"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-38*[DeltaX_ServiceModule]-19*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1493,7 +1488,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1506,20 +1501,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="23"/>
-	  <Numeric name="StartCopyNo" value="398"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="23"/>
+    <Numeric name="StartCopyNo" value="398"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-40*[DeltaX_ServiceModule]-20*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1532,7 +1527,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1545,7 +1540,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1558,7 +1553,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1571,20 +1566,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="22"/>
-	  <Numeric name="StartCopyNo" value="421"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="22"/>
+    <Numeric name="StartCopyNo" value="421"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-42*[DeltaX_ServiceModule]-21*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1597,7 +1592,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1610,7 +1605,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1623,7 +1618,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1636,20 +1631,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="20"/>
-	  <Numeric name="StartCopyNo" value="443"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="20"/>
+    <Numeric name="StartCopyNo" value="443"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-44*[DeltaX_ServiceModule]-22*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1662,7 +1657,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1675,7 +1670,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1688,20 +1683,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="18"/>
-	  <Numeric name="StartCopyNo" value="463"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="18"/>
+    <Numeric name="StartCopyNo" value="463"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-46*[DeltaX_ServiceModule]-23*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1714,7 +1709,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1727,20 +1722,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="16"/>
-	  <Numeric name="StartCopyNo" value="481"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="16"/>
+    <Numeric name="StartCopyNo" value="481"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-48*[DeltaX_ServiceModule]-24*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1753,7 +1748,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1766,7 +1761,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1779,7 +1774,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1792,20 +1787,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="13"/>
-	  <Numeric name="StartCopyNo" value="497"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="13"/>
+    <Numeric name="StartCopyNo" value="497"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-50*[DeltaX_ServiceModule]-25*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1818,7 +1813,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1831,7 +1826,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1844,20 +1839,20 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
-	  <rParent name="etl:DiscSector_Front"/>
-	  <String name="ChildName" value="etl:SensorModule_Front_Right"/>
-	  <Numeric name="N" value="7"/>
-	  <Numeric name="StartCopyNo" value="510"/>
+    <rParent name="etl:DiscSector_Front"/>
+    <String name="ChildName" value="etl:SensorModule_Front_Right"/>
+    <Numeric name="N" value="7"/>
+    <Numeric name="StartCopyNo" value="510"/>
     <Numeric name="IncrCopyNo" value="1"/>
     <Numeric name="Delta" value="([SensorModule_Y]+[DeltaY])*mm"/>
     <Vector  name="Base" type="numeric" nEntries="3"> ([x_start_front]-52*[DeltaX_ServiceModule]-26*[SensorModule_X])*mm, ([y_offset])*mm, 4.02*mm </Vector> 
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1870,7 +1865,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Front"/>
@@ -1883,7 +1878,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
 
 
@@ -1903,7 +1898,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -1916,7 +1911,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -1929,7 +1924,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -1942,7 +1937,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -1955,7 +1950,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -1968,7 +1963,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -1981,7 +1976,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -1994,7 +1989,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2007,7 +2002,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2020,7 +2015,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2033,7 +2028,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2046,7 +2041,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2059,7 +2054,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2072,7 +2067,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2085,7 +2080,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2098,7 +2093,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2111,7 +2106,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2124,7 +2119,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2137,7 +2132,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2150,7 +2145,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2163,7 +2158,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2176,7 +2171,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2189,7 +2184,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2202,7 +2197,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2215,7 +2210,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2228,7 +2223,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2241,7 +2236,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2254,7 +2249,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2267,7 +2262,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2280,7 +2275,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2293,7 +2288,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2306,7 +2301,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2319,7 +2314,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2332,7 +2327,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2345,7 +2340,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2358,7 +2353,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2371,7 +2366,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2384,7 +2379,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2397,7 +2392,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2410,7 +2405,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2423,7 +2418,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2436,7 +2431,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2449,7 +2444,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2462,7 +2457,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2475,7 +2470,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2488,7 +2483,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2501,7 +2496,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2514,7 +2509,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2527,7 +2522,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2540,7 +2535,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2553,7 +2548,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2566,7 +2561,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2579,7 +2574,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2592,7 +2587,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2605,7 +2600,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2618,7 +2613,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2631,7 +2626,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2644,7 +2639,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2657,7 +2652,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2670,7 +2665,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2683,7 +2678,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2696,7 +2691,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2709,7 +2704,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2722,7 +2717,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2735,7 +2730,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2748,7 +2743,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2761,7 +2756,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2774,7 +2769,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2787,7 +2782,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2800,7 +2795,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2813,7 +2808,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2826,7 +2821,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2839,7 +2834,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2852,7 +2847,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2865,7 +2860,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2878,7 +2873,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2891,7 +2886,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2904,7 +2899,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2917,7 +2912,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2930,7 +2925,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2943,7 +2938,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2956,7 +2951,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2969,7 +2964,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2982,7 +2977,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -2995,7 +2990,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3008,7 +3003,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3021,7 +3016,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3034,7 +3029,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3047,7 +3042,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3060,7 +3055,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3073,7 +3068,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3086,7 +3081,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3099,7 +3094,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3112,7 +3107,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3125,7 +3120,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3151,7 +3146,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3164,7 +3159,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3177,7 +3172,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3190,7 +3185,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3203,7 +3198,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3216,7 +3211,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3229,7 +3224,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3242,7 +3237,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3255,7 +3250,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3268,7 +3263,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3281,7 +3276,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3294,7 +3289,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3307,7 +3302,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
   <Algorithm name="mtd:DDMTDLinear">
     <rParent name="etl:DiscSector_Back"/>
@@ -3320,7 +3315,7 @@
     <Numeric name="Theta" value="90.*deg"/> 
     <Numeric name="Phi" value="90.*deg"/>
     <Numeric name="Theta_obj" value="90.*deg"/> 
-	  <Numeric name="Phi_obj" value="0.*deg"/>
+    <Numeric name="Phi_obj" value="0.*deg"/>
   </Algorithm>
 
 
