@@ -32,6 +32,7 @@ Fast Timing system:
 * I10: Same as I9 w/ material adjustments
 * I11: Same as I10, xml reorganized, comparison base for new ETL and DD4hep migration
 * I12: Starting from I11, new ETL layout from MTD TDR
+* I13: Starting from I2, new ETL layout implementing half-disks instead of quarters
 
 The script also handles the common and forward elements of the geometry:
 * O2: detailed cavern description
@@ -56,5 +57,6 @@ Several detector combinations have been generated:
 * D53 = T15+C9+M4+I12+O4+F2
 * D54 = T19+C9+M4+I10+O4+F2
 * D55 = T19+C9+M5+I10+O4+F2
+* D56 = T15+C9+M4+I13+O4+F2
 
 D35 is the MTD TDR baseline, D41 is the L1T TDR baseline, and D49 is the HLT TDR baseline.

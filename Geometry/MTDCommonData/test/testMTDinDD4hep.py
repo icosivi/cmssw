@@ -11,7 +11,7 @@ process.load("FWCore.MessageLogger.MessageLogger_cfi")
 process.MessageLogger.cerr.INFO.limit = -1
 
 process.DDDetectorESProducer = cms.ESSource("DDDetectorESProducer",
-                                            confGeomXMLFiles = cms.FileInPath('Geometry/MTDCommonData/data/dd4hep/cms-mtdD50-geometry.xml'),
+                                            confGeomXMLFiles = cms.FileInPath('Geometry/MTDCommonData/data/dd4hep/cms-mtdD53-geometry.xml'),
                                             appendToDataLabel = cms.string('MTD')
 )
 
