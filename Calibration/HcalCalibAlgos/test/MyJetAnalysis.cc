@@ -84,7 +84,8 @@ void MyJetAnalysis::analyze(const edm::Event& iEvent, const edm::EventSetup& evS
 
 
   edm::Handle<reco::PFJetCollection> pfjets;
-  iEvent.getByLabel("ak4PFJets", pfjets);
+  //iEvent.getByLabel("ak4PFJets", pfjets);
+  iEvent.getByToken(tok_PFJet_, pfjets);
 
   edm::Handle<std::vector<reco::Vertex>> pv;
   iEvent.getByToken(tok_PV_, pv);
@@ -93,43 +94,68 @@ void MyJetAnalysis::analyze(const edm::Event& iEvent, const edm::EventSetup& evS
   TFile *rootfile=new TFile("time_out.root","RECREATE");
   rootfile->cd();
 
-  TH1F *time_hist = new TH1F("time_hist","time_hist",1000,-1,7);
+  TH1F *vtxtime_hist = new TH1F("vtxtime_hist","vtxtime_hist",20,-1,1);
+  TH1F *pfcand_time_hist = new TH1F("pfcand_time_hist","pfcand_time_hist",80,-1,7);
+  TH1F *timediff_hist = new TH1F("timediff_hist","timediff_hist",200,0,200);
+  TH1F *sigmat_hist = new TH1F("sigmat_hist","sigmat_hist",40,0,20);
 
-  for(reco::PFJetCollection::const_iterator it = pfjets->begin(); it != pfjets->end(); ++it){
+  //int vtx_counter = 0;
 
-    const reco::PFJet* jet  = &(*it);
-    float ptt = TMath::Sqrt( jet->px()*jet->px() + jet->py()*jet->py() );
-    float eta = TMath::Abs( jet->eta() );
-    std::vector<reco::PFCandidatePtr> probeconst = jet->getPFConstituents();
+  for (std::vector<reco::Vertex>::const_iterator it = pv->begin(); it != pv->end(); ++it) {
 
-    for(std::vector<reco::PFCandidatePtr>::const_iterator itt = probeconst.begin(); itt != probeconst.end(); ++itt){
+    float vtx_time = it->t();
+    float vtx_time_error = it->tError();
+    vtxtime_hist->Fill(vtx_time);
+
+    if(vtx_time_error > 0){
+
+      for(reco::PFJetCollection::const_iterator it = pfjets->begin(); it != pfjets->end(); ++it){
+
+        const reco::PFJet* jet  = &(*it);
+        float ptt = TMath::Sqrt( jet->px()*jet->px() + jet->py()*jet->py() );
+        float eta = TMath::Abs( jet->eta() );
+        std::vector<reco::PFCandidatePtr> probeconst = jet->getPFConstituents();
+
+        if( ptt>20 && eta<5 ){
+
+          for(std::vector<reco::PFCandidatePtr>::const_iterator itt = probeconst.begin(); itt != probeconst.end(); ++itt){
         
-      //float ptt = TMath::Sqrt( (*itt)->px()*(*itt)->px() + (*itt)->py()*(*itt)->py() ); 
-      float timee = (*itt)->time();
+            float pfcand_time = (*itt)->time();
+            float pfcand_time_error = (*itt)->timeError();
 
-      if( timee!=0 && ptt>20 && eta<5 ){
+            float timediff = TMath::Abs(vtx_time - pfcand_time)/pfcand_time_error;
+            float sigma_t = TMath::Abs(vtx_time - pfcand_time)/TMath::Sqrt(pfcand_time_error*pfcand_time_error +  vtx_time_error*vtx_time_error) ;
 
-      time_hist->Fill(timee); 
-      //printf("%f", timee);
+            if( pfcand_time_error>0 && ptt>20 && eta<5 ){
 
-      }     
+              timediff_hist->Fill(timediff);
+              pfcand_time_hist->Fill(pfcand_time); 
+              sigmat_hist->Fill(sigma_t);
+              //printf("%f", timee);
+            }     
+          }
+        }
+      }
     }
   }
 
   
-  for (std::vector<reco::Vertex>::const_iterator it = pv->begin(); it != pv->end(); ++it) {
+  /*for (std::vector<reco::Vertex>::const_iterator it = pv->begin(); it != pv->end(); ++it) {
 
-    if (!it->isFake() ){
+    //if (!it->isFake() ){
 
       float vtx_time = it->t();
-      if(vtx_time != 0) printf("%f", vtx_time);
+      float vtx_time_error = it->tError();
+      if(vtx_time_error > 0) printf("%f", vtx_time);
 
-    }
+    //}
       
-  }
+  }*/
 
-
-  time_hist->Write();
+  vtxtime_hist->Write();
+  pfcand_time_hist->Write();
+  timediff_hist->Write();
+  sigmat_hist->Write();
   rootfile->Write();
   rootfile->Close(); 
 
