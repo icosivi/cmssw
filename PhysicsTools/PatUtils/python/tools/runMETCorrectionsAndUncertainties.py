@@ -1459,7 +1459,7 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
             getattr(process, "pfMet"+postfix).src = pfCandCollection
             getattr(process, "pfMet"+postfix).calculateSignificance = False
             if self.getvalue("Puppi"):
-                getattr(process, "pfMet"+postfix).applyWeight = True
+                getattr(process, "pfMet"+postfix).applyWeight = cms.bool(True)
                 getattr(process, "pfMet"+postfix).srcWeights = "puppiNoLep"
             patMetModuleSequence += getattr(process, "pfMet"+postfix)
 
@@ -1628,7 +1628,7 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
             #puppi
             if self._parameters["Puppi"].value:
                 getattr(process, jetColName).srcWeights = cms.InputTag("puppi")
-                getattr(process, jetColName).applyWeights = True
+                getattr(process, jetColName).applyWeight = cms.bool(True)
 
             patMetModuleSequence += getattr(process, jetColName)
 
