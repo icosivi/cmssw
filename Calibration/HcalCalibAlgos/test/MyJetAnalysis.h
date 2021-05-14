@@ -14,6 +14,7 @@
 #include "FWCore/Framework/interface/MakerMacros.h"
 #include "FWCore/Framework/interface/ESHandle.h"
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
+#include "DataFormats/Candidate/interface/VertexCompositePtrCandidate.h"
 #include "DataFormats/EgammaCandidates/interface/PhotonFwd.h"
 #include "DataFormats/EgammaCandidates/interface/Photon.h"
 #include "DataFormats/JetReco/interface/CaloJetCollection.h"
@@ -39,6 +40,14 @@
 #include "DataFormats/HLTReco/interface/TriggerEvent.h"
 #include "DataFormats/HLTReco/interface/TriggerObject.h"
 #include "DataFormats/PatCandidates/interface/PackedCandidate.h"
+#include "DataFormats/PatCandidates/interface/Jet.h"
+
+#include "DataFormats/Math/interface/Point3D.h"
+#include "DataFormats/VertexReco/interface/Vertex.h"
+#include "DataFormats/VertexReco/interface/VertexFwd.h"
+#include "DataFormats/BTauReco/interface/SecondaryVertexTagInfo.h"
+#include "DataFormats/TrackReco/interface/Track.h"
+#include "DataFormats/TrackReco/interface/TrackFwd.h"
 
 #include "Geometry/CaloGeometry/interface/CaloGeometry.h"
 #include "Geometry/CaloGeometry/interface/CaloSubdetectorGeometry.h"
@@ -51,41 +60,18 @@
 #include "DataFormats/ParticleFlowCandidate/interface/PFCandidate.h"
 #include "DataFormats/ParticleFlowCandidate/interface/PFCandidateFwd.h"
 
+#include "SimDataFormats/GeneratorProducts/interface/LHEEventProduct.h"
+
 #include "HLTrigger/HLTcore/interface/HLTPrescaleProvider.h"
+#include <TTree.h>
+//#include "PositionVector3D.h"
+
 
 // forward declarations
-class TH1D;
-class TH2D;
+class TH1F;
+//class TH2D;
 class TFile;
-class TTree;
-
-/*class PFJetCorretPair : protected std::pair<const reco::PFJet*, double> {
-public:
-  PFJetCorretPair() {
-    first = 0;
-    second = 1.0;
-  }
-  PFJetCorretPair(const reco::PFJet* j, double s) {
-    first = j;
-    second = s;
-  }
-  ~PFJetCorretPair() {}
-
-  inline const reco::PFJet* jet(void) const { return first; }
-  inline void jet(const reco::PFJet* j) {
-    first = j;
-    return;
-  }
-  inline double scale(void) const { return second; }
-  inline void scale(double d) {
-    second = d;
-    return;
-  }
-  double scaledEt() const { return first->et() * second; }
-  bool isValid() const { return (first != NULL) ? true : false; }
-
-private:
-};*/
+//class TTree;
 
 
 // --------------------------------------------
@@ -98,153 +84,101 @@ public:
   ~MyJetAnalysis();
 
 private:
-  //virtual void beginJob();  //(const edm::EventSetup&);
+  virtual void beginJob();  //(const edm::EventSetup&);
   virtual void analyze(const edm::Event&, const edm::EventSetup&);
-  //virtual void endJob();
-  //void beginRun(const edm::Run&, const edm::EventSetup&);
+  virtual void endJob();
+  
+  TFile *rootfile = new TFile("VBF_long_pruned_zMC.root","RECREATE");
+  TTree *OutTree = new TTree("Analysis","Analysis");
 
-  // parameters
-  //int debug_;  // print debug statements
-  //unsigned int debugEvent;
-  //int debugHLTTrigNames;
+  
+  //std::string pfJetCollName_;        // label for the PF jet collection
 
-  //edm::InputTag rhoCollection_;
-  //edm::InputTag pfType1METColl, pfMETColl;
-
-  //std::string photonCollName_;       // label for the photon collection
-  std::string pfJetCollName_;        // label for the PF jet collection
-  //std::string pfJetCorrName_;        // label for the PF jet correction service
-  //std::string genJetCollName_;       // label for the genjet collection
+  std::string patJetCollName_; 
+  std::string genJetCollName_;       // label for the genjet collection
   //std::string genParticleCollName_;  // label for the genparticle collection
-  //std::string genEventInfoName_;     // label for the generator event info collection
-  //std::string hbheRecHitName_;       // label for HBHERecHits collection
-  //std::string hfRecHitName_;         // label for HFRecHit collection
-  //std::string hoRecHitName_;         // label for HORecHit collection
-  //std::string rootHistFilename_;     // name of the histogram file
-  std::string pvCollName_;           // label for primary vertex collection
-  //std::string prodProcess_;          // the producer process for AOD=2
+  std::string pvCollName_;
+  std::string pvCollName2_;
 
-  //bool allowNoPhoton_;                         // whether module is used for dijet analysis
-  //double photonPtMin_;                         // lowest value of the leading photon pT
-  //double photonJetDPhiMin_;                    // phi angle between the leading photon and the leading jet
-  //double jetEtMin_;                            // lowest value of the leading jet ET
-  //double jet2EtMax_;                           // largest value of the subleading jet ET
-  //double jet3EtMax_;                           // largest value of the third jet ET
-  //std::vector<std::string> photonTrigNamesV_;  // photon trigger names
-  //std::vector<std::string> jetTrigNamesV_;     // jet trigger names
-  //bool writeTriggerPrescale_;                  // whether attempt to record the prescale
+  std::string svCollName_;
+
+  std::string lhee_;
+  std::string genp_;
+  std::string packed_;
+
+  edm::InputTag genp2_;
 
   //Tokens
-  //edm::EDGetTokenT<reco::PhotonCollection> tok_Photon_;
-  edm::EDGetTokenT<reco::PFJetCollection> tok_PFJet_;
-  //edm::EDGetTokenT<std::vector<reco::GenJet> > tok_GenJet_;
-  //edm::EDGetTokenT<std::vector<reco::GenParticle> > tok_GenPart_;
-  //edm::EDGetTokenT<GenEventInfoProduct> tok_GenEvInfo_;
-  //edm::EDGetTokenT<edm::SortedCollection<HBHERecHit, edm::StrictWeakOrdering<HBHERecHit> > > tok_HBHE_;
-  //edm::EDGetTokenT<edm::SortedCollection<HFRecHit, edm::StrictWeakOrdering<HFRecHit> > > tok_HF_;
-  //edm::EDGetTokenT<edm::SortedCollection<HORecHit, edm::StrictWeakOrdering<HORecHit> > > tok_HO_;
-  //edm::EDGetTokenT<edm::ValueMap<Bool_t> > tok_loosePhoton_;
-  //edm::EDGetTokenT<edm::ValueMap<Bool_t> > tok_tightPhoton_;
-  //edm::EDGetTokenT<std::vector<Bool_t> > tok_loosePhotonV_;
-  //edm::EDGetTokenT<std::vector<Bool_t> > tok_tightPhotonV_;
-  //edm::EDGetTokenT<reco::PFCandidateCollection> tok_PFCand_;
-  //edm::EDGetTokenT<reco::VertexCollection> tok_Vertex_;
-  //edm::EDGetTokenT<reco::GsfElectronCollection> tok_GsfElec_;
-  //edm::EDGetTokenT<double> tok_Rho_;
-  //edm::EDGetTokenT<reco::ConversionCollection> tok_Conv_;
-  //edm::EDGetTokenT<reco::BeamSpot> tok_BS_;
+  
+  edm::EDGetTokenT<std::vector<pat::Jet> > tok_PATJet_;
+  
+  //edm::EDGetTokenT<reco::PFJetCollection> tok_PFJet_;
+  edm::EDGetTokenT<std::vector<reco::GenJet> > tok_GenJet_;
+  
   edm::EDGetTokenT<std::vector<reco::Vertex> > tok_PV_;
-  //edm::EDGetTokenT<reco::PFMETCollection> tok_PFMET_;
-  //edm::EDGetTokenT<reco::PFMETCollection> tok_PFType1MET_;
-  //edm::EDGetTokenT<edm::TriggerResults> tok_TrigRes_;
-  //bool doPFJets_;   // use PFJets
-  //bool doGenJets_;  // use GenJets
-  //int workOnAOD_;
-  //bool ignoreHLT_;
+  edm::EDGetTokenT<std::vector<reco::Vertex> > tok_PV2_;
 
-  // root file/histograms
-  //TFile* rootfile_;
+  edm::EDGetTokenT<std::vector<reco::VertexCompositePtrCandidate> > tok_SV_;
 
-  //TTree* misc_tree_;  // misc.information. Will be filled only once
-  //TTree* calo_tree_;
-  //TTree* pf_tree_;
+  edm::EDGetTokenT< LHEEventProduct > lhep_token;
+  edm::EDGetTokenT< std::vector<reco::GenParticle> > genp_token;
+  edm::EDGetTokenT< std::vector<pat::PackedCandidate> > packed_token;
 
-  // trigger info
-  //HLTPrescaleProvider hltPrescaleProvider_;
-  //std::vector<int> photonTrigFired_;
-  //std::vector<int> photonTrigPrescale_;
-  //std::vector<int> jetTrigFired_;
-  //std::vector<int> jetTrigPrescale_;
+  //edm::EDGetTokenT< ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<float>,ROOT::Math::DefaultCoordinateSystemTag> > genp_token_2;
+  edm::EDGetTokenT< math::XYZPointF > genp_token_2;
 
-  // Event info
-  /*int runNumber_, lumiBlock_, eventNumber_;
-  float eventWeight_, eventPtHat_;
-  int nPhotons_, nGenJets_;
-  int nPFJets_;
-  ULong64_t nProcessed_;
-  int pf_NPV_;*/
 
-  // Particle-flow jets
-  // leading Et jet info
-  /*float ppfjet_pt_, ppfjet_p_, ppfjet_E_, ppfjet_eta_, ppfjet_phi_, ppfjet_scale_;
-  float ppfjet_area_, ppfjet_E_NPVcorr_;
-  float ppfjet_NeutralHadronFrac_, ppfjet_NeutralEMFrac_;
-  int ppfjet_nConstituents_;
-  float ppfjet_ChargedHadronFrac_, ppfjet_ChargedMultiplicity_, ppfjet_ChargedEMFrac_;
-  float ppfjet_gendr_, ppfjet_genpt_, ppfjet_genp_, ppfjet_genE_;
-  float ppfjet_unkown_E_, ppfjet_unkown_px_, ppfjet_unkown_py_, ppfjet_unkown_pz_, ppfjet_unkown_EcalE_;
-  float ppfjet_electron_E_, ppfjet_electron_px_, ppfjet_electron_py_, ppfjet_electron_pz_, ppfjet_electron_EcalE_;
-  float ppfjet_muon_E_, ppfjet_muon_px_, ppfjet_muon_py_, ppfjet_muon_pz_, ppfjet_muon_EcalE_;
-  float ppfjet_photon_E_, ppfjet_photon_px_, ppfjet_photon_py_, ppfjet_photon_pz_, ppfjet_photon_EcalE_;
-  int ppfjet_unkown_n_, ppfjet_electron_n_, ppfjet_muon_n_, ppfjet_photon_n_;
-  int ppfjet_had_n_;
-  std::vector<float> ppfjet_had_E_, ppfjet_had_px_, ppfjet_had_py_, ppfjet_had_pz_, ppfjet_had_EcalE_,
-      ppfjet_had_rawHcalE_, ppfjet_had_emf_, ppfjet_had_E_mctruth_;
-  std::vector<int> ppfjet_had_id_, ppfjet_had_candtrackind_, ppfjet_had_mcpdgId_, ppfjet_had_ntwrs_;
-  int ppfjet_ntwrs_;
-  std::vector<int> ppfjet_twr_ieta_, ppfjet_twr_iphi_, ppfjet_twr_depth_, ppfjet_twr_subdet_, ppfjet_twr_candtrackind_,
-      ppfjet_twr_hadind_, ppfjet_twr_elmttype_, ppfjet_twr_clusterind_;
-  std::vector<float> ppfjet_twr_hade_, ppfjet_twr_frac_, ppfjet_twr_dR_;
-  int ppfjet_cluster_n_;
-  std::vector<float> ppfjet_cluster_eta_, ppfjet_cluster_phi_, ppfjet_cluster_dR_;
-  int ppfjet_ncandtracks_;
-  std::vector<float> ppfjet_candtrack_px_, ppfjet_candtrack_py_, ppfjet_candtrack_pz_, ppfjet_candtrack_EcalE_;*/
+  //int runNumber;
+  int eventNumber;
+  int ngen_jet;
+  int npat_jet;
+  int PV_number;
 
-  // subleading Et jet info
-  /*float pfjet2_pt_, pfjet2_p_, pfjet2_E_, pfjet2_eta_, pfjet2_phi_, pfjet2_scale_;
-  float pfjet2_area_, pfjet2_E_NPVcorr_;
-  float pfjet2_NeutralHadronFrac_, pfjet2_NeutralEMFrac_;
-  int pfjet2_nConstituents_;
-  float pfjet2_ChargedHadronFrac_, pfjet2_ChargedMultiplicity_, pfjet2_ChargedEMFrac_;
-  float pfjet2_gendr_, pfjet2_genpt_, pfjet2_genp_, pfjet2_genE_;
-  float pfjet2_unkown_E_, pfjet2_unkown_px_, pfjet2_unkown_py_, pfjet2_unkown_pz_, pfjet2_unkown_EcalE_;
-  float pfjet2_electron_E_, pfjet2_electron_px_, pfjet2_electron_py_, pfjet2_electron_pz_, pfjet2_electron_EcalE_;
-  float pfjet2_muon_E_, pfjet2_muon_px_, pfjet2_muon_py_, pfjet2_muon_pz_, pfjet2_muon_EcalE_;
-  float pfjet2_photon_E_, pfjet2_photon_px_, pfjet2_photon_py_, pfjet2_photon_pz_, pfjet2_photon_EcalE_;
-  int pfjet2_unkown_n_, pfjet2_electron_n_, pfjet2_muon_n_, pfjet2_photon_n_;
-  int pfjet2_had_n_;
-  std::vector<float> pfjet2_had_E_, pfjet2_had_px_, pfjet2_had_py_, pfjet2_had_pz_, pfjet2_had_EcalE_,
-      pfjet2_had_rawHcalE_, pfjet2_had_emf_, pfjet2_had_E_mctruth_;
-  std::vector<int> pfjet2_had_id_, pfjet2_had_candtrackind_, pfjet2_had_mcpdgId_, pfjet2_had_ntwrs_;
-  int pfjet2_ntwrs_;
-  std::vector<int> pfjet2_twr_ieta_, pfjet2_twr_iphi_, pfjet2_twr_depth_, pfjet2_twr_subdet_, pfjet2_twr_candtrackind_,
-      pfjet2_twr_hadind_, pfjet2_twr_elmttype_, pfjet2_twr_clusterind_;
-  std::vector<float> pfjet2_twr_hade_, pfjet2_twr_frac_, pfjet2_twr_dR_;
-  int pfjet2_cluster_n_;
-  std::vector<float> pfjet2_cluster_eta_, pfjet2_cluster_phi_, pfjet2_cluster_dR_;
-  int pfjet2_ncandtracks_;
-  std::vector<float> pfjet2_candtrack_px_, pfjet2_candtrack_py_, pfjet2_candtrack_pz_, pfjet2_candtrack_EcalE_;
+  //int ntracks;
+  float z_MC;
+  float z_4d;
+  float mc_pointing_difference;
+  float vtx_time;
+  float vtx_time_error;
 
-  float pf_thirdjet_et_;
-  float pf_thirdjet_pt_, pf_thirdjet_p_, pf_thirdjet_px_, pf_thirdjet_py_;
-  float pf_thirdjet_E_, pf_thirdjet_eta_, pf_thirdjet_phi_, pf_thirdjet_scale_;*/
+  //std::vector<float> z_SV;
 
-  /*template <class Jet_type>
-  struct PFJetCorretPairComp {
-    inline bool operator()(const PFJetCorretPair& a, const PFJetCorretPair& b) const {
-      return (a.jet()->pt() * a.scale()) > (b.jet()->pt() * b.scale());
-    }
-  };*/
+  std::vector<float> Gen_pt;
+  std::vector<float> Pat_pt;
+  std::vector<float> DeltaR;
+  //std::vector<float> Gen_pz;
+  //std::vector<float> Pat_pz;
+  std::vector<float> Gen_energy;
+  std::vector<float> Pat_energy;
+  //std::vector<float> PF_pt;
+  std::vector<float> Gen_eta;
+  std::vector<float> Pat_eta;
+  //std::vector<float> PF_eta;
+  std::vector<float> Gen_phi;
+  std::vector<float> Pat_phi;
+  std::vector<bool> Pat_bTagger;
+  std::vector<float> Pat_bScore;
+  //std::vector<float> PF_phi;
+  
+  std::vector<float> Pruned_pt;
+  std::vector<float> Pruned_eta;
+  std::vector<float> Pruned_phi;
+  std::vector<int> Pruned_partonFlav;
+  std::vector<int> Pruned_mother_partonFlav;
+
+  //std::vector<int> Pat_partonFlav;
+  //std::vector<int> Gen_partonFlav;
+
+  std::vector<std::vector<float>> PF_candTime;
+  std::vector<std::vector<float>> PF_candTime_error;
+  std::vector<std::vector<float>> PF_timediff;
+  std::vector<std::vector<float>> PF_sigmat;
+  //std::vector<std::vector<float>> PF_candPt;
+  //std::vector<std::vector<float>> PF_candEta;
+  //std::vector<std::vector<float>> PF_candPhi;
+
+ 
+  double deltaR(const pat::Jet* j1, const reco::Jet* j2);
 
 };
 
