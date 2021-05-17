@@ -237,8 +237,8 @@ void MyJetAnalysis::analyze(const edm::Event& iEvent, const edm::EventSetup& evS
 
   for (std::vector<reco::Vertex>::const_iterator it_pv = pv->begin(); it_pv != pv->end(); ++it_pv) {
 
-    if(vtx_counter == best_PV){
-    //if(vtx_counter == 0){
+    //if(vtx_counter == best_PV){
+    if(vtx_counter == 0){
 
       //z_SV.clear();
       Gen_pt.clear();

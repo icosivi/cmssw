@@ -88,7 +88,7 @@ private:
   virtual void analyze(const edm::Event&, const edm::EventSetup&);
   virtual void endJob();
   
-  TFile *rootfile = new TFile("VBF_long_pruned_zMC.root","RECREATE");
+  TFile *rootfile = new TFile("VBF_v15.root","RECREATE");
   TTree *OutTree = new TTree("Analysis","Analysis");
 
   

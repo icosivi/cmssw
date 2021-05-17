@@ -3,6 +3,8 @@ import FWCore.ParameterSet.Config as cms
 #from RecoJets.Configuration.RecoPFJets_cff import *
 from CommonTools.ParticleFlow.pfNoPileUp_cff import *
 
+from CommonTools.PileupAlgos.customizePuppiTune_cff import UpdatePuppiTuneV15  
+
 MyJetAnalysis = cms.EDAnalyzer('MyJetAnalysis',
 				  #patJetCollName      = cms.string('slimmedJetsAK8PFPuppiSoftDropPacked'),
 				  patJetCollName      = cms.string('slimmedJetsPuppi'),
@@ -25,4 +27,7 @@ MyJetAnalysis = cms.EDAnalyzer('MyJetAnalysis',
                                   doGenJets           = cms.bool(True),                                                                                                    
                                   )
 from Configuration.Eras.Modifier_stage2L1Trigger_cff import stage2L1Trigger
+
+#from CommonTools.PileupAlgos.customizePuppiTune_cff import UpdatePuppiTuneV15  
+#UpdatePuppiTuneV15(process)
 #stage2L1Trigger.toModify(MyJetAnalysis, stageL1Trigger = 2)
