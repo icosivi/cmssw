@@ -282,11 +282,18 @@ class RecoJetAdder(object):
         # CHS
         #
         elif recoJetInfo.jetPUMethod == "chs":
+<<<<<<< HEAD
           self.addProcessAndTask(proc, pfCand, cms.EDFilter("CandPtrSelector",
               src = cms.InputTag(self.pfLabel),
               cut = cms.string("fromPV"),
             )
+=======
+          from CommonTools.ParticleFlow.pfCHS_cff import pfCHS, packedPrimaryVertexAssociationJME
+          setattr(proc, pfCand,
+            pfCHS.clone()
+>>>>>>> c178d8a36c9... remove fromPV
           )
+	  self.prerequisites.append(process.packedPrimaryVertexAssociationJME)
           self.prerequisites.append(pfCand)
         #
         # PUPPI
