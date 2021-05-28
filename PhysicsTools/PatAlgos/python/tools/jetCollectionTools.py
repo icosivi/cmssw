@@ -293,7 +293,7 @@ class RecoJetAdder(object):
             pfCHS.clone()
 >>>>>>> c178d8a36c9... remove fromPV
           )
-	  self.prerequisites.append(process.packedPrimaryVertexAssociationJME)
+          self.prerequisites.append(process.packedPrimaryVertexAssociationJME)
           self.prerequisites.append(pfCand)
         #
         # PUPPI
