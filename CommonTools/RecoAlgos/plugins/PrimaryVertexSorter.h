@@ -141,7 +141,7 @@ void PrimaryVertexSorter<ParticlesCollection>::produce(edm::Event& iEvent, const
   iEvent.getByToken(tokenJets_, jets);
 
   edm::ESHandle<TransientTrackBuilder> builder;
-  iSetup.get<TransientTrackRecord>().get("TransientTrackBuilder", builder);
+  //  iSetup.get<TransientTrackRecord>().get("TransientTrackBuilder", builder);
 
   Handle<VertexCollection> vertices;
   iEvent.getByToken(tokenVertices_, vertices);
