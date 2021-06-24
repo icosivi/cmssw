@@ -144,6 +144,7 @@ std::pair<int, PrimaryVertexAssignment::Quality> PrimaryVertexAssignment::charge
       jetIdx = std::distance(jets.begin(), ij);
     }
   }
+  return std::pair<int, PrimaryVertexAssignment::Quality>(-1, PrimaryVertexAssignment::Unassigned);
   // if jet found
   if (jetIdx != -1) {
     reco::TransientTrack transientTrack = builder.build(*track);
