@@ -1592,7 +1592,6 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
         if chs:
             CHSname="chs"
             jetColName="ak4PFJetsCHS"
-<<<<<<< HEAD
 
             pfCHS=None
             if self._parameters["onMiniAOD"].value:
@@ -1600,10 +1599,6 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
                 pfCandColl = cms.InputTag("pfNoPileUpJME"+postfix)
                 addToProcessAndTask("pfNoPileUpJME"+postfix, pfCHS, process, task)
                 patMetModuleSequence += getattr(process, "pfNoPileUpJME"+postfix)
-=======
-            if self._parameters["onMiniAOD"].value: 
-                pfCandColl = cms.InputTag("pfCHS")
->>>>>>> c178d8a36c9... remove fromPV
             else:
                 addToProcessAndTask("tmpPFCandCollPtr"+postfix,
                                     cms.EDProducer("PFCandidateFwdPtrProducer",
@@ -1612,20 +1607,9 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
                 process.load("CommonTools.ParticleFlow.pfNoPileUpJME_cff")
                 task.add(process.pfNoPileUpJMETask)
                 configtools.cloneProcessingSnippet(process, getattr(process,"pfNoPileUpJMESequence"), postfix, addToTask = True )
-<<<<<<< HEAD
                 getattr(process, "pfPileUpJME"+postfix).PFCandidates = "tmpPFCandCollPtr"+postfix
                 getattr(process, "pfNoPileUpJME"+postfix).bottomCollection = "tmpPFCandCollPtr"+postfix
                 pfCandColl = "pfNoPileUpJME"+postfix
-=======
-                getattr(process, "primaryVertexAssociationJME"+postfix).particles = pfCandCollection
-                getattr(process, "pfPileUpJME"+postfix).PFCandidates = cms.InputTag("tmpPFCandCollPtr"+postfix)
-                addToProcessAndTask("pfNoPileUpJME"+postfix,
-                        getattr(process, "pfNoPileUpJME"+postfix).clone( 
-                        bottomCollection = cms.InputTag("tmpPFCandCollPtr"+postfix) ),
-                        process, task )
-                getattr(process, "pfNoPileUpJME"+postfix).vertexAssociation = cms.InputTag('primaryVertexAssociationJME'+postfix,'original')
-                pfCandColl = cms.InputTag("pfNoPileUpJME"+postfix)
->>>>>>> c178d8a36c9... remove fromPV
                 patMetModuleSequence += getattr(process, "tmpPFCandCollPtr"+postfix)
                 patMetModuleSequence += getattr(process, "pfNoPileUpJME"+postfix)
 

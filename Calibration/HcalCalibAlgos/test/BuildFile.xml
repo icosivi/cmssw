@@ -13,6 +13,7 @@
 <use name="DataFormats/L1GlobalTrigger"/>
 <use name="DataFormats/ParticleFlowReco"/>
 <use name="DataFormats/TrackReco"/>
+<use name="DataFormats/PatCandidates"/>
 <use name="DataFormats/HcalIsolatedTrack"/>
 <use name="FWCore/Framework"/>
 <use name="FWCore/MessageLogger"/>
@@ -29,6 +30,7 @@
 <use name="clhep"/>
 <use name="hepmc"/>
 <use name="CommonTools/UtilAlgos"/>
+<use name="CommonTools/RecoAlgos"/>
 <use name="TrackPropagation/SteppingHelixPropagator"/>
 <use name="TrackingTools/TrackAssociator"/>
 <library file="*.cc" name="CalibrationHcalCalibAlgosTest">
