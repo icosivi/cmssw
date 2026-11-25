@@ -5,8 +5,12 @@
 
       The module is the ETL v11 one (Geometry/MTDCommonData/data/etl/v11/etl.xml): 2 half modules,
       each with 2 LGAD sensors of 16x16 pixels (1.3 mm pitch).
-      All the planes use the "Back" flavour of the v11 module, i.e. the base plate (AlN) and the
-      LGAD sensors face -z, so that a beam travelling along +z enters from the sensor side.
+      All the planes use the "Back" flavour of the v11 module (base plate and LGAD sensors on the -z side of
+      the module), rotated by 180 deg around the y axis (rotation RY180): the readout electronics (service
+      hybrid, readout board, PCB, ETROC) face -z, so that a beam travelling along +z enters from the
+      electronics side and the base plate (AlN) and the thermal pad are on the downstream side.
+      An aluminium plate TBplate_Z thick (cooling plate), with the same transverse size as the module, is
+      placed downstream of each module, in contact with the thermal pad.
 
       The container volumes keep the names and the hierarchy of the ETL v11 geometry, as required by
       ETLNumberingScheme and by the MTD numbering construction:
@@ -18,7 +22,8 @@
         plane 3 (z = TBplane3_z) : Disc2Timing / DiscSector_Front_2
       The planes are placed in the CMS frame, inside the ETL envelope of the CMS skeleton used for the
       test beam simulations (caloBase:CALOECFront, from caloBase.xml in the same directory, extended along z
-      up to 3500 mm). The z positions refer to the centre of the module; the modules are displaced along x
+      up to 3500 mm). The z positions refer to the centre of the module (the containers from
+      module_ServiceHybrid3_Back up are enlarged downstream only, to contain the Al plate); the modules are displaced along x
       by TBmodule_x, since the ETL envelope is a ring around the beam axis (inner radius 285 mm).
       As for the full ETL, the CALOEC volume is placed also at -z (rotated by 180 deg), so the three planes
       are replicated at z < 0: they are not crossed by the beam, but they provide the second ETL endcap
@@ -28,6 +33,8 @@
 
   <RotationSection label="etl.xml">
     <Rotation name="RPCD_plus_90CW" thetaX="90*deg" phiX="-90*deg" thetaY="90*deg" phiY="180*deg" thetaZ="180*deg" phiZ="0*deg"/>
+    <!-- 180 deg around y: (x, y, z) -> (-x, y, -z) -->
+    <Rotation name="RY180" thetaX="90*deg" phiX="180*deg" thetaY="90*deg" phiY="90*deg" thetaZ="180*deg" phiZ="0*deg"/>
   </RotationSection>
 
   <ConstantsSection label="etl.xml" eval="true">
@@ -37,9 +44,12 @@
     <Constant name="TBplane3_z" value="3400.*mm"/>
     <Constant name="TBmodule_x" value="600.*mm"/>
     <Constant name="TBmargin" value="1.*mm"/> <!-- clearance added at each level of the container hierarchy -->
-    <Constant name="ETLcenter_z" value="0.5*([TBplane1_z]+[TBplane3_z])"/>
-    <Constant name="Disc1center_z" value="0.5*([TBplane1_z]+[TBplane2_z])"/>
-    <Constant name="Disc2center_z" value="[TBplane3_z]"/>
+    <Constant name="TBplate_Z" value="12.*mm"/> <!-- Al plate downstream of each module -->
+    <Constant name="TBassembly_Z" value="[Module_Z]+[TBplate_Z]"/> <!-- module + Al plate -->
+    <Constant name="TBassembly_dz" value="0.5*[TBplate_Z]"/> <!-- centre of module + plate w.r.t. the module centre -->
+    <Constant name="ETLcenter_z" value="0.5*([TBplane1_z]+[TBplane3_z])+[TBassembly_dz]"/>
+    <Constant name="Disc1center_z" value="0.5*([TBplane1_z]+[TBplane2_z])+[TBassembly_dz]"/>
+    <Constant name="Disc2center_z" value="[TBplane3_z]+[TBassembly_dz]"/>
 
     <!-- Module, from ETL v11 -->
     <Constant name="Module_Y" value="28.75*mm"/>
@@ -151,13 +161,14 @@
   <SolidSection label="etl.xml">
     <!-- Test beam containers (half sizes) -->
     <Box name="EndcapTimingLayer" dx="0.5*[Module_X]+4*[TBmargin]" dy="[Module_Y]+4*[TBmargin]"
-         dz="0.5*([TBplane3_z]-[TBplane1_z])+0.5*[Module_Z]+4*[TBmargin]"/>
+         dz="0.5*([TBplane3_z]-[TBplane1_z])+0.5*[TBassembly_Z]+4*[TBmargin]"/>
     <Box name="Disc1Timing" dx="0.5*[Module_X]+3*[TBmargin]" dy="[Module_Y]+3*[TBmargin]"
-         dz="0.5*([TBplane2_z]-[TBplane1_z])+0.5*[Module_Z]+3*[TBmargin]"/>
+         dz="0.5*([TBplane2_z]-[TBplane1_z])+0.5*[TBassembly_Z]+3*[TBmargin]"/>
     <Box name="Disc2Timing" dx="0.5*[Module_X]+3*[TBmargin]" dy="[Module_Y]+3*[TBmargin]"
-         dz="0.5*[Module_Z]+3*[TBmargin]"/>
-    <Box name="DiscSector" dx="0.5*[Module_X]+2*[TBmargin]" dy="[Module_Y]+2*[TBmargin]" dz="0.5*[Module_Z]+2*[TBmargin]"/>
-    <Box name="module_ServiceHybrid3" dx="0.5*[Module_X]+[TBmargin]" dy="[Module_Y]+[TBmargin]" dz="0.5*[Module_Z]+[TBmargin]"/>
+         dz="0.5*[TBassembly_Z]+3*[TBmargin]"/>
+    <Box name="DiscSector" dx="0.5*[Module_X]+2*[TBmargin]" dy="[Module_Y]+2*[TBmargin]" dz="0.5*[TBassembly_Z]+2*[TBmargin]"/>
+    <Box name="TBAlPlate" dx="0.5*[Module_X]" dy="[Module_Y]" dz="0.5*[TBplate_Z]"/>
+    <Box name="module_ServiceHybrid3" dx="0.5*[Module_X]+[TBmargin]" dy="[Module_Y]+[TBmargin]" dz="0.5*[TBassembly_Z]+[TBmargin]"/>
 
     <!-- Module, from ETL v11 -->
     <Box name="Half_Module" dx="0.5*[Module_X]" dy="0.5*[Module_Y]" dz="0.5*[Module_Z]"/>
@@ -203,6 +214,10 @@
     <LogicalPart name="DiscSector_Front_2" category="unspecified">
       <rSolid name="etl:DiscSector"/>
       <rMaterial name="materials:Air"/>
+    </LogicalPart>
+    <LogicalPart name="TBAlPlate" category="unspecified">
+      <rSolid name="etl:TBAlPlate"/>
+      <rMaterial name="materials:Aluminium"/>
     </LogicalPart>
     <LogicalPart name="module_ServiceHybrid3_Back" category="unspecified">
       <rSolid name="etl:module_ServiceHybrid3"/>
@@ -296,17 +311,17 @@
     <PosPart copyNumber="1">
       <rParent name="etl:Disc1Timing"/>
       <rChild name="etl:DiscSector_Front_1"/>
-      <Translation x="0.*mm" y="0.*mm" z="[TBplane1_z]-[Disc1center_z]"/>
+      <Translation x="0.*mm" y="0.*mm" z="[TBplane1_z]+[TBassembly_dz]-[Disc1center_z]"/>
     </PosPart>
     <PosPart copyNumber="1">
       <rParent name="etl:Disc1Timing"/>
       <rChild name="etl:DiscSector_Back_1"/>
-      <Translation x="0.*mm" y="0.*mm" z="[TBplane2_z]-[Disc1center_z]"/>
+      <Translation x="0.*mm" y="0.*mm" z="[TBplane2_z]+[TBassembly_dz]-[Disc1center_z]"/>
     </PosPart>
     <PosPart copyNumber="1">
       <rParent name="etl:Disc2Timing"/>
       <rChild name="etl:DiscSector_Front_2"/>
-      <Translation x="0.*mm" y="0.*mm" z="[TBplane3_z]-[Disc2center_z]"/>
+      <Translation x="0.*mm" y="0.*mm" z="[TBplane3_z]+[TBassembly_dz]-[Disc2center_z]"/>
     </PosPart>
     <PosPart copyNumber="1">
       <rParent name="etl:DiscSector_Front_1"/>
@@ -323,6 +338,13 @@
     <PosPart copyNumber="1">
       <rParent name="etl:module_ServiceHybrid3_Back"/>
       <rChild name="etl:Module_Back"/>
+      <rRotation name="etl:RY180"/>
+      <Translation x="0.*mm" y="0.*mm" z="-1*[TBassembly_dz]"/>
+    </PosPart>
+    <PosPart copyNumber="1">
+      <rParent name="etl:module_ServiceHybrid3_Back"/>
+      <rChild name="etl:TBAlPlate"/>
+      <Translation x="0.*mm" y="0.*mm" z="0.5*[Module_Z]"/>
     </PosPart>
 
     <!-- Module, from ETL v11 -->

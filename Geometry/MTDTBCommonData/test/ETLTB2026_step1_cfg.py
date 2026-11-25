@@ -1,6 +1,7 @@
 # GEN-SIM for the ETL test beam 2026 geometry (DD4hep), adapted from BTLTB2025_step1_DUTbehind_cfg.py
 #   cmsRun ETLTB2026_step1_cfg.py maxEvents=200 outputFile=ETLTB2026_step1.root
-# Pion beam along +z, starting at z = BeamPosition, transverse Gaussian profile centred on one LGAD sensor
+# 5 GeV electron beam along +z, starting at z = BeamPosition, uniform 1 x 1 cm2 transverse profile centred on the
+# module centre, i.e. on the corner shared by the four LGAD sensors
 # (planes at z = 3000, 3200, 3400 mm, modules centred at x = 600 mm, in the CMS skeleton with full BTL)
 import FWCore.ParameterSet.Config as cms
 import FWCore.ParameterSet.VarParsing as VarParsing
@@ -46,29 +47,31 @@ from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:phase2_realistic_0T', '')
 
 # Beam along +z: large eta (theta ~ 1e-4 rad), phi = 0.
-# Vertex in cm: (BeamMeanX, BeamMeanY, BeamPosition); the sensor centres of each plane are at
-# (60 +- 1.10, +-1.14) cm. The vertex is 50 cm upstream of the first plane
+# Vertex in cm: (BeamMeanX, BeamMeanY, BeamPosition); the module centre is at (60, 0) cm and the sensor
+# centres of each plane are at (60 +- 1.10, +-1.14) cm. The vertex is 50 cm upstream of the first plane
 beamEta = 10.
 process.VtxSmeared.MinEta = beamEta
 process.VtxSmeared.MaxEta = beamEta
 process.VtxSmeared.MinPhi = 0.
 process.VtxSmeared.MaxPhi = 0.
-process.VtxSmeared.BeamMeanX = 61.10
-process.VtxSmeared.BeamMeanY = 1.14
+process.VtxSmeared.BeamMeanX = 60.0
+process.VtxSmeared.BeamMeanY = 0.0
 process.VtxSmeared.BeamPosition = 250.
-process.VtxSmeared.BeamSigmaX = 0.3
-process.VtxSmeared.BeamSigmaY = 0.3
+# flat (uniform) profile: with GaussianProfile = False, BeamSigmaX/Y are the FULL widths (x, y in mean +- 0.5*width)
+process.VtxSmeared.GaussianProfile = False
+process.VtxSmeared.BeamSigmaX = 1.0
+process.VtxSmeared.BeamSigmaY = 1.0
 process.VtxSmeared.TimeOffset = 0.   # ns
 
 process.generator = cms.EDProducer("FlatRandomEGunProducer",
     PGunParameters = cms.PSet(
-        PartID = cms.vint32(211),
+        PartID = cms.vint32(11),   # e-
         MinEta = cms.double(beamEta),
         MaxEta = cms.double(beamEta),
         MinPhi = cms.double(0.),
         MaxPhi = cms.double(0.),
-        MinE   = cms.double(120.),
-        MaxE   = cms.double(120.)
+        MinE   = cms.double(5.),
+        MaxE   = cms.double(5.)
     ),
     Verbosity       = cms.untracked.int32(0),
     AddAntiParticle = cms.bool(False)
